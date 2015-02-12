@@ -1,9 +1,8 @@
 ### About
 
-A simple wrapper around the orcid.org API. Enhanced clone of this rep - https://github.com/scholrly/orcid-python.
+A simple wrapper around the orcid.org API. Enhanced clone of this rep - https://github.com/scholrly/orcid-python. Ready to run examples can be found in the [examples](examples) folder.
 
-### Example
-
+### Command Line Examples
 
 Here's a quick snippet to get info on `John Wilbanks`_. ::
 
@@ -51,7 +50,6 @@ You can also accomplish more complex queries using `Q` objects and fields ::
     >>> print next(authors).family_name
     wilbanks
 
-Enjoy!
 
 ### Credits
 
