@@ -2,6 +2,30 @@
 
 A simple wrapper around the orcid.org API. Enhanced clone of this rep - https://github.com/scholrly/orcid-python. Ready to run examples can be found in the [examples](examples) folder.
 
+### Install
+
+Install at once with pip
+```
+pip install git+https://github.com/vdmitriyev/pyorcid.git
+```
+
+Manual installation (or usage):
+* Download from the [GitHub](https://github.com/vdmitriyev/pyorcid/archive/master.zip) latest version
+* Unzip archive
+* Install dependencies (see the section *Dependencies*)
+* Naviage to the example folder, pick up and execute example
+
+
+### Dependencies
+
+* requests>=1.0.4
+* lucene-querybuilder>=0.1.6
+
+Install dependencies with pip
+```
+pip install -r requirements.txt
+```
+
 ### Command Line Examples
 
 Here's a quick snippet to get info on `John Wilbanks`_. ::
@@ -49,7 +73,6 @@ You can also accomplish more complex queries using `Q` objects and fields ::
     >>> authors = orcid.search(Q('given-name','john') & Q('family-name', 'wilbanks'))
     >>> print next(authors).family_name
     wilbanks
-
 
 ### Credits
 

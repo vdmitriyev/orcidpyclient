@@ -4,7 +4,7 @@ def readme():
     with open('README.md') as f:
         return f.read()
 
-setup(name='py-orcid',
+setup(name='pyorcid',
       version='0.2',
       description='A simple wrapper around the ORCID.org API.',
       long_description=readme(),
@@ -16,7 +16,7 @@ setup(name='py-orcid',
       author='Matt Luongo, Viktor Dmitriyev',
       author_email='mhluongo@gmail.com',
       license='MIT',
-      packages=['py-orcid'],
+      packages=['pyorcid'],
       install_requires=[
                       'requests>=1.0.4',
                       'lucene-querybuilder>=0.1.6',

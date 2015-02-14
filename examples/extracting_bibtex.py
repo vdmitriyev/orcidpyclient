@@ -5,7 +5,7 @@ import sys
 sys.path.insert(0, '../')
 
 # maing testing library
-import orcid
+import pyorcid as orcid
 
 # additional libraries
 import json
