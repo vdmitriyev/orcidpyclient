@@ -21,15 +21,21 @@ logging.getLogger("#orcid#").setLevel(logging.INFO)
 me = orcid.get('0000-0001-5661-4587')
 
 def show_keyword(obj):
-    print obj.keywords
-    for key_word in obj.keywords:
+    """
+        Printing author keywords
+    """
+
+    print '[i] printing author keywords'
+    keywords = obj.keywords
+    for key_word in keywords:
         print key_word
 
 def print_publications(obj):
     """
-        Printing keywords
+        Printing author publications
     """
-    print '[i] printing the keywords set by author'
+
+    print '[i] printing author publications'
     for value in obj.publications:
         print value
 
