@@ -64,26 +64,6 @@ def save_bibtex(bibtex, file_name='orcid-bibtex-output.bib', encoding='utf-8'):
 
     print '[i] bibtex was created, check following file: %s ' % (file_name)
 
-def save_separted_bibtex(bibtex, file_prefix='orcid-bibtex-output', encoding='utf-8'):
-    """
-        (dict, str, str) -> None
-
-        Saving bibtex to the multipke files, separated by year.
-    """
-
-    file_name = '{0}/{1}'.format(TARGET_FODLER, file_prefix)
-
-    for key in bibtex:
-        _file = codecs.open(file_name + '-' + str(key) + '.bib', 'w', encoding)
-        _file.write("%%%%%%%%%%%%%%%% \n%% %s \n%%%%%%%%%%%%%%%%\n\n" % key)
-        bibtex_group = ''
-        for value in bibtex[key]:
-            bibtex_group += value + '\n\n'
-        _file.write(bibtex_group)
-        _file.close()
-
-    print '[i] bibtex was created, check following file: %s ' % (file_name)
-
 def save_nocite(bibtex, file_name='orcid-nocite-output.tex', encoding='utf-8'):
     """
         (dict, str, str) -> None
@@ -149,9 +129,6 @@ def orcid_bibtex(obj):
 
     # citing extracted bibtex
     save_nocite(orcid_bibtex)
-
-    # saving bibtex into separated files
-    save_separted_bibtex(orcid_bibtex)
 
 #show_keyword(me)
 #print_publications(me)

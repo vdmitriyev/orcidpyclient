@@ -13,7 +13,16 @@ Manual installation (or usage):
 * Download from the [GitHub](https://github.com/vdmitriyev/pyorcid/archive/master.zip) latest version
 * Unzip archive
 * Install dependencies (see the section *Dependencies*)
-* Naviage to the example folder, pick up and execute example
+* Navigate to the example folder, pick up and execute example
+    - [extracting_bibtex.py](examples/extracting_bibtex.py) script just extracts bibtex from the Orcid
+    - [orcid_bibtex_to_html.py](examples/orcid_bibtex_to_html.py) iterates through the list or ID's, extracts orcid, creates bat file to compile bibtex into HTMLs with help of JabRef
+        + List should be in the python dict format, here is the example (I created file 'vlbalist.py')
+        ```
+        orcid_list = {
+            'Viktor Dmitriyev' : '0000-0001-5661-4587',
+            }
+
+        ```
 
 
 ### Dependencies
