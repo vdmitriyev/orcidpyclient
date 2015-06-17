@@ -15,7 +15,7 @@ import codecs
 # setting logging to the DEBUG mode
 import logging
 
-#logging.getLogger("#orcid#").setLevel(logging.DEBUG)
+#logging.getLogger("orcid-bibtex-to-html").setLevel(logging.DEBUG)
 logging.getLogger("orcid-bibtex-to-html").setLevel(logging.INFO)
 
 TARGET_FODLER = 'generated'
@@ -85,15 +85,23 @@ def extract_bitex(obj):
     """
 
     bibtex = {}
+    bibtex['nobibtex'] = list()
+
     for value in obj.publications:
-        if value.citation.citation_type == 'BIBTEX':
-            if value.publicationyear not in bibtex:
-                bibtex[value.publicationyear] = list()
-                bibtex[value.publicationyear].append(value.citation.citation)
+        try:
+            if value.citation.citation_type == 'BIBTEX':
+                if value.publicationyear not in bibtex:
+                    bibtex[value.publicationyear] = list()
+                    bibtex[value.publicationyear].append(value.citation.citation)
+                else:
+                    bibtex[value.publicationyear].append(value.citation.citation)
             else:
-                bibtex[value.publicationyear].append(value.citation.citation)
-        else:
-            print '[i] this publications is having no BIBTEX %s ' % (value)
+                bibtex['nobibtex'].append('% ' + value.title)
+                print '[i] this publications is having no BIBTEX %s ' % (value)
+        except Exception as ex:
+            print '[e] exception: {0}'.format(str(ex))
+            print '[i] following publication was not added: {0}'.format(value.title)
+            bibtex['nobibtex'].append('% ' + value.title)
 
     return bibtex
 

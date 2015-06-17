@@ -74,7 +74,7 @@ PublicationBase = dictmapper('PublicationBase',{
     'citation': to(['work-citation'], lambda d: Citation(d) if d is not None else None),
     'external_ids':to(['work-external-identifiers','work-external-identifier'],
                       lambda l: map(ExternalID, l) if l is not None else None),
-    'publicationyear': ['publication-date', 'year', 'value'],
+    'publicationyear': ['publication-date', 'year', 'value']
 })
 
 class Publication(PublicationBase):
@@ -111,6 +111,8 @@ class Author(AuthorBase):
         resp = requests.get(ORCID_PUBLIC_BASE_URL + self.orcid
                             + '/orcid-works', headers = BASE_HEADERS)
         logger.debug(json.dumps(resp.json(), sort_keys=True, indent=4, separators=(',', ': ')))
+        # import pprint
+        # pprint.pprint(resp.json())
         self._loaded_works = Works(resp.json())
 
     @property
