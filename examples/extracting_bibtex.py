@@ -8,6 +8,7 @@ sys.path.insert(0, '../')
 import pyorcid as orcid
 
 # additional libraries
+import os
 import json
 import codecs
 
@@ -19,6 +20,8 @@ logging.getLogger("#orcid#").setLevel(logging.INFO)
 
 #retrieve my own's profile from his ORCID
 me = orcid.get('0000-0001-5661-4587')
+
+TARGET_FODLER = 'generated'
 
 def show_keyword(obj):
     """
@@ -46,6 +49,8 @@ def save_bibtex(bibtex, file_name='orcid-bibtex-output.bib', encoding='utf-8'):
         Saving bibtex to the file, grouped by year.
     """
 
+    file_name = '{0}/{1}'.format(TARGET_FODLER, file_name)
+
     _file = codecs.open(file_name, 'w', encoding)
 
     for key in bibtex:
@@ -56,6 +61,26 @@ def save_bibtex(bibtex, file_name='orcid-bibtex-output.bib', encoding='utf-8'):
         _file.write(bibtex_group)
 
     _file.close()
+
+    print '[i] bibtex was created, check following file: %s ' % (file_name)
+
+def save_separted_bibtex(bibtex, file_prefix='orcid-bibtex-output', encoding='utf-8'):
+    """
+        (dict, str, str) -> None
+
+        Saving bibtex to the multipke files, separated by year.
+    """
+
+    file_name = '{0}/{1}'.format(TARGET_FODLER, file_prefix)
+
+    for key in bibtex:
+        _file = codecs.open(file_name + '-' + str(key) + '.bib', 'w', encoding)
+        _file.write("%%%%%%%%%%%%%%%% \n%% %s \n%%%%%%%%%%%%%%%%\n\n" % key)
+        bibtex_group = ''
+        for value in bibtex[key]:
+            bibtex_group += value + '\n\n'
+        _file.write(bibtex_group)
+        _file.close()
 
     print '[i] bibtex was created, check following file: %s ' % (file_name)
 
@@ -70,6 +95,8 @@ def save_nocite(bibtex, file_name='orcid-nocite-output.tex', encoding='utf-8'):
         start = s.find('{') + 1
         end = s.find(',', start)
         return  s[start:end]
+
+    file_name = '{0}/{1}'.format(TARGET_FODLER, file_name)
 
     _file = codecs.open(file_name, 'w', encoding)
 
@@ -111,6 +138,9 @@ def orcid_bibtex(obj):
         Extrating bibtex from ORCID, saving it to the file
     """
 
+    if not os.path.exists(TARGET_FODLER):
+        os.makedirs(TARGET_FODLER)
+
     # extracting bibtex
     orcid_bibtex = extract_bitex(me)
 
@@ -119,6 +149,9 @@ def orcid_bibtex(obj):
 
     # citing extracted bibtex
     save_nocite(orcid_bibtex)
+
+    # saving bibtex into separated files
+    save_separted_bibtex(orcid_bibtex)
 
 #show_keyword(me)
 #print_publications(me)
