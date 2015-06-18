@@ -25,3 +25,4 @@ python extracting_bibtex.py
 			}
 
 		```
+        + To make in run on Mac OS, it's better if you will copy JabRef into the 'generated' folder directly
