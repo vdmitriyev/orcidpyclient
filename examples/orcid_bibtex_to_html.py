@@ -31,22 +31,40 @@ UMLAUT_TO_LATEX = {
     u'ß' : '{\\ss}'
 }
 
-def generate_bat(orcid_list, bat_name = 'build-all.bat', encoding='utf-8'):
+def generate_bat(orcid_list, bat_name = 'buildall.{0}', encoding='utf-8'):
     """
         (list, str, str) -> None
 
         Generating command bat file
     """
 
-    cmd_header = 'REM SETTING PATH to JabRef\n'
-    cmd_header += 'set PATH=%PATH%;c:\\Soft\\JabRef\\; \n\n'
+    cmd_comment = 'REM'
+    bat_name = bat_name.format('bat')
+    cmd_env = 'set'
+    cmd_path = '%PATH%;'
+    path = 'C:\\Soft\\JabRef\\;'
+    cmd_jabref = 'JabRef-2.10.jar'
+
+
+    if os.name != 'nt':
+        bat_name = bat_name.format('sh')
+        cmd_comment = '#'
+        cmd_env = 'export'
+        cmd_path = '$PATH;'
+        path = '~/JabRef/'
+        cmd_jabref = 'java -jar JabRef-2.10.jar'
+
+
+
+    cmd_header = '{0} SETTING PATH to JabRef\n'.format(cmd_comment)
+    cmd_header += '{0} PATH={1}{2} \n\n'.format(cmd_env, cmd_path, path)
 
     #template = 'java -jar JabRef-2.10.jar -o "{0}".html,htmlvlba -n true "{0}".bib\n'
-    template = 'JabRef-2.10.jar -o "{0}".html,htmlvlba -n true "{0}".bib\n'
+    template = '{0} -o "{1}".html,htmlvlba -n true "{1}".bib\n'
 
     cmd = ''
     for key in orcid_list:
-        cmd += template.format(key)
+        cmd += template.format(cmd_jabref, key)
 
     file_name = '{0}/{1}'.format(TARGET_FODLER, bat_name)
     _file = codecs.open(file_name, 'w', encoding)
