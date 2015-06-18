@@ -10,6 +10,7 @@ import pyorcid as orcid
 # additional libraries
 import os
 import json
+import uuid
 import codecs
 
 # setting logging to the DEBUG mode
@@ -19,6 +20,16 @@ import logging
 logging.getLogger("orcid-bibtex-to-html").setLevel(logging.INFO)
 
 TARGET_FODLER = 'generated'
+
+UMLAUT_TO_LATEX = {
+    u'Ö' : '\\"{O}',
+    u'ö' : '\\"{o}',
+    u'ä' : '\\"{a}',
+    u'Ä' : '\\"{A}',
+    u'Ü' : '\\"{U}',
+    u'ü' : '\\"{u}',
+    u'ß' : '{\\ss}'
+}
 
 def generate_bat(orcid_list, bat_name = 'build-all.bat', encoding='utf-8'):
     """
@@ -77,7 +88,23 @@ def save_bibtex(bibtex, file_prefix='orcid-bibtex-output', separate=False, encod
 
     print '[i] bibtex was created, check following file: %s ' % (file_name)
 
-def extract_bitex(obj):
+def form_bibtex(authors, title, year):
+    """
+        - forming bibtex
+    """
+
+    template = '@InProceedings{0}{2} , \n\t Title = {0}{3}{1}, \n\t Author = {0}{4}{1}, \n\t Year = {0}{5}{1}\n{1}'
+    _authors = ' and '.join(authors)
+    try:
+        _title = title
+        for x in UMLAUT_TO_LATEX:
+            _title = _title.replace(x, UMLAUT_TO_LATEX[x])
+    except Exception as ex:
+        _title = title
+
+    return template.format('{','}', str(uuid.uuid1())[:13], _title, _authors, year)
+
+def extract_bitex(obj, author):
     """
         (Class) -> dict()
 
@@ -85,7 +112,7 @@ def extract_bitex(obj):
     """
 
     bibtex = {}
-    bibtex['nobibtex'] = list()
+    nobibtex = list()
 
     for value in obj.publications:
         try:
@@ -96,12 +123,18 @@ def extract_bitex(obj):
                 else:
                     bibtex[value.publicationyear].append(value.citation.citation)
             else:
-                bibtex['nobibtex'].append('% ' + value.title)
-                print '[i] this publications is having no BIBTEX %s ' % (value)
+                # nobibtex.append('% ' + value.title)
+                nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
+                print '[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title)
         except Exception as ex:
             print '[e] exception: {0}'.format(str(ex))
-            print '[i] following publication was not added: {0}'.format(value.title)
-            bibtex['nobibtex'].append('% ' + value.title)
+            # print '[i] following publication was not added: {0}'.format(value.title)
+            print '[i] new BIBTEX was generated {0}'.format(value.title)
+            # nobibtex.append('% ' + value.title)
+            nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
+
+    if nobibtex:
+        bibtex['nobibtex'] = nobibtex
 
     return bibtex
 
@@ -130,7 +163,7 @@ def main():
 
         # extracting bibtex
         try:
-            orcid_bibtex = extract_bitex(orcid_obj)
+            orcid_bibtex = extract_bitex(orcid_obj, author = name)
 
             # saving bibtex into separated files
             save_bibtex(bibtex=orcid_bibtex, file_prefix=name, separate=False)
