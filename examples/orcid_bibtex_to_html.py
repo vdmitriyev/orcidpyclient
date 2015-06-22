@@ -31,7 +31,7 @@ UMLAUT_TO_LATEX = {
     u'ß' : '{\\ss}'
 }
 
-def generate_bat(orcid_list, bat_name = 'buildall.{0}', encoding='utf-8'):
+def generate_bat(orcid_list, bat_name = 'buildall.{0}', separate=False, years = [], encoding='utf-8'):
     """
         (list, str, str) -> None
 
@@ -45,6 +45,9 @@ def generate_bat(orcid_list, bat_name = 'buildall.{0}', encoding='utf-8'):
     path = 'C:\\Soft\\JabRef\\;'
     cmd_jabref = 'JabRef-2.10.jar'
 
+    merge_files = 'copy /Y {0} "{1}".html\n'
+    merge_file_internal = '"{0}-{1}.html"+'
+
 
     if os.name != 'nt':
         bat_name = bat_name.format('sh')
@@ -55,21 +58,37 @@ def generate_bat(orcid_list, bat_name = 'buildall.{0}', encoding='utf-8'):
         cmd_jabref = 'java -jar JabRef-2.10.jar'
 
 
-
     cmd_header = '{0} SETTING PATH to JabRef\n'.format(cmd_comment)
     cmd_header += '{0} PATH={1}{2} \n\n'.format(cmd_env, cmd_path, path)
 
     #template = 'java -jar JabRef-2.10.jar -o "{0}".html,htmlvlba -n true "{0}".bib\n'
-    template = '{0} -o "{1}".html,htmlvlba -n true "{1}".bib\n'
+    if not separate:
+        template = '{0} -o "{1}".html,htmlvlba -n true "{1}".bib\n'
+    else:
+        template = '{0} -o "{1}-{2}".html,htmlvlba -n true "{1}-{2}".bib\n'
 
     cmd = ''
+    cmd_merge = ''
+
     for key in orcid_list:
-        cmd += template.format(cmd_jabref, key)
+
+        if not separate:
+            cmd += template.format(cmd_jabref, key)
+        else:
+            merge_tmp = ''
+            for x in years[key]:
+                cmd += template.format(cmd_jabref, key, x)
+                merge_tmp += merge_file_internal.format(key, x)
+            cmd_merge += merge_files.format(merge_tmp[:-1], key)
 
     file_name = '{0}/{1}'.format(TARGET_FODLER, bat_name)
     _file = codecs.open(file_name, 'w', encoding)
     _file.write(cmd_header)
     _file.write(cmd)
+    _file.write('\n')
+
+    # to merge htmls
+    _file.write(cmd_merge)
     _file.close()
 
 
@@ -163,6 +182,8 @@ def main():
         Extrating bibtex from ORCID, saving it to the file
     """
 
+    separate_by_year = True
+
     import vlbalist as ol
     orcid_list = ol.orcid_list
 
@@ -171,10 +192,12 @@ def main():
     if not os.path.exists(TARGET_FODLER):
         os.makedirs(TARGET_FODLER)
 
+    years = {}
     # extracting bibtex
     for key in orcid_list:
 
         name = key
+        years[name] = list()
         orcidid = orcid_list[key]
         print '[i] extracting bibtex for {0}'.format(name)
         orcid_obj = orcid.get(orcidid)
@@ -183,14 +206,21 @@ def main():
         try:
             orcid_bibtex = extract_bitex(orcid_obj, author = name)
 
+            # years
+            tmp_list = list()
+            for key in orcid_bibtex:
+                tmp_list.append(key)
+            years[name] = sorted(tmp_list,reverse = True)
+
             # saving bibtex into separated files
-            save_bibtex(bibtex=orcid_bibtex, file_prefix=name, separate=False)
+            save_bibtex(bibtex=orcid_bibtex, file_prefix=name, separate=separate_by_year)
             orcid_extracted.append(name)
         except Exception as ex:
             print '[i] exception happened'
             print '[e] exception: {0}'.format(str(ex))
 
-    generate_bat(orcid_extracted)
+    #print  years
+    generate_bat(orcid_extracted, separate=separate_by_year, years = years)
 
 if __name__ == '__main__':
 
