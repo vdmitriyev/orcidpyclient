@@ -39,7 +39,7 @@ def generate_bat(orcid_list, bat_name = 'buildall.{0}', separate=False, years = 
     """
 
     cmd_comment = 'REM'
-    bat_name = bat_name.format('bat')
+    cmd_file_name = bat_name.format('bat')
     cmd_env = 'set'
     cmd_path = '%PATH%;'
     path = 'C:\\Soft\\JabRef\\;'
@@ -50,7 +50,7 @@ def generate_bat(orcid_list, bat_name = 'buildall.{0}', separate=False, years = 
 
 
     if os.name != 'nt':
-        bat_name = bat_name.format('sh')
+        cmd_file_name = bat_name.format('sh')
         cmd_comment = '#'
         cmd_env = 'export'
         cmd_path = '$PATH;'
@@ -86,7 +86,7 @@ def generate_bat(orcid_list, bat_name = 'buildall.{0}', separate=False, years = 
 
             cmd_merge += merge_files.format(merge_tmp[:-1], key)
 
-    file_name = '{0}/{1}'.format(TARGET_FODLER, bat_name)
+    file_name = '{0}/{1}'.format(TARGET_FODLER, cmd_file_name)
     _file = codecs.open(file_name, 'w', encoding)
     _file.write(cmd_header)
     _file.write(cmd)
