@@ -56,6 +56,8 @@ def generate_bat(orcid_list, bat_name = 'buildall.{0}', separate=False, years = 
         cmd_path = '$PATH;'
         path = '~/JabRef/'
         cmd_jabref = 'java -jar JabRef-2.10.jar'
+        merge_files = 'cat {0} > "{1}".html\n'
+        merge_file_internal = '"{0}-{1}.html" '
 
 
     cmd_header = '{0} SETTING PATH to JabRef\n'.format(cmd_comment)
@@ -171,7 +173,7 @@ def extract_bitex(obj, author):
             nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
 
     if nobibtex:
-        bibtex['nobibtex'] = nobibtex
+        bibtex['9999nobibtex'] = nobibtex
 
     return bibtex
 
