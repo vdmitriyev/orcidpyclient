@@ -78,9 +78,12 @@ def generate_bat(orcid_list, bat_name = 'buildall.{0}', separate=False, years = 
             cmd += template.format(cmd_jabref, key)
         else:
             merge_tmp = ''
+
             for x in years[key]:
                 cmd += template.format(cmd_jabref, key, x)
                 merge_tmp += merge_file_internal.format(key, x)
+
+
             cmd_merge += merge_files.format(merge_tmp[:-1], key)
 
     file_name = '{0}/{1}'.format(TARGET_FODLER, bat_name)
@@ -173,7 +176,7 @@ def extract_bitex(obj, author):
             nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
 
     if nobibtex:
-        bibtex['9999nobibtex'] = nobibtex
+        bibtex[99999] = nobibtex
 
     return bibtex
 
@@ -212,7 +215,7 @@ def main():
             tmp_list = list()
             for key in orcid_bibtex:
                 tmp_list.append(key)
-            years[name] = sorted(tmp_list,reverse = True)
+            years[name] = sorted(tmp_list, reverse = True)
 
             # saving bibtex into separated files
             save_bibtex(bibtex=orcid_bibtex, file_prefix=name, separate=separate_by_year)
@@ -221,7 +224,7 @@ def main():
             print '[i] exception happened'
             print '[e] exception: {0}'.format(str(ex))
 
-    #print  years
+    print  years
     generate_bat(orcid_extracted, separate=separate_by_year, years = years)
 
 if __name__ == '__main__':
