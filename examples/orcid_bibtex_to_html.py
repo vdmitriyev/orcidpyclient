@@ -65,9 +65,9 @@ def generate_bat(orcid_list, bat_name = 'buildall.{0}', separate=False, years = 
 
     #template = 'java -jar JabRef-2.10.jar -o "{0}".html,htmlvlba -n true "{0}".bib\n'
     if not separate:
-        template = '{0} -o "{1}".html,htmlvlba -n true "{1}".bib\n'
+        template = '{0} -o "{1}.html",htmlvlba -n true "{1}.bib"\n'
     else:
-        template = '{0} -o "{1}-{2}".html,htmlvlba -n true "{1}-{2}".bib\n'
+        template = '{0} -o "{1}-{2}.html",htmlvlba -n true "{1}-{2}.bib"\n'
 
     cmd = ''
     cmd_merge = ''
@@ -187,7 +187,7 @@ def main():
         Extrating bibtex from ORCID, saving it to the file
     """
 
-    separate_by_year = True
+    separate_by_year = False
 
     import vlbalist as ol
     orcid_list = ol.orcid_list
