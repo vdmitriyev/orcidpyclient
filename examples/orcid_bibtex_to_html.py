@@ -170,10 +170,9 @@ def extract_bitex(obj, author):
                 print '[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title)
         except Exception as ex:
             print '[e] exception: {0}'.format(str(ex))
-            # print '[i] following publication was not added: {0}'.format(value.title)
-            print '[i] new BIBTEX was generated {0}'.format(value.title)
-            # nobibtex.append('% ' + value.title)
-            nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
+            print '[i] some exception with BIBTEX, new BIBTEX was generated {0}'.format(value.title)
+            year = 0
+            nobibtex.append(form_bibtex([author], value.title, year))
 
     if nobibtex:
         bibtex[99999] = nobibtex
