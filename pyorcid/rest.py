@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import requests
 import json
 
@@ -74,7 +76,7 @@ PublicationBase = dictmapper('PublicationBase',{
     'citation': to(['work-citation'], lambda d: Citation(d) if d is not None else None),
     'external_ids':to(['work-external-identifiers','work-external-identifier'],
                       lambda l: map(ExternalID, l) if l is not None else None),
-    'publicationyear': ['publication-date', 'year', 'value']
+    'publicationyear': [u'publication-date', u'year', u'value']
 })
 
 class Publication(PublicationBase):

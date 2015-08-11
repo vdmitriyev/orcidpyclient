@@ -128,7 +128,7 @@ def save_bibtex(bibtex, file_prefix='orcid-bibtex-output', separate=False, encod
         _file.close()
 
 
-    print '[i] bibtex was created, check following file: %s ' % (file_name)
+    print '[i] file with bibtex was created, check it here: %s ' % (file_name)
 
 def form_bibtex(authors, title, year):
     """
@@ -146,6 +146,10 @@ def form_bibtex(authors, title, year):
 
     return template.format('{','}', str(uuid.uuid1())[:13], _title, _authors, year)
 
+def dump(obj):
+  for attr in dir(obj):
+    print "obj.%s = %s" % (attr, getattr(obj, attr))
+
 def extract_bitex(obj, author):
     """
         (Class) -> dict()
@@ -157,15 +161,21 @@ def extract_bitex(obj, author):
     nobibtex = list()
 
     for value in obj.publications:
+        # from pprint import pprint
+        # pprint(vars(value))
+        # dump(value)
         try:
-            if value.citation.citation_type == 'BIBTEX':
-                if value.publicationyear not in bibtex:
-                    bibtex[value.publicationyear] = list()
-                    bibtex[value.publicationyear].append(value.citation.citation)
+            if hasattr(value.citation, 'citation_type'):
+                if value.citation.citation_type == 'BIBTEX':
+                    if value.publicationyear not in bibtex:
+                        bibtex[value.publicationyear] = list()
+                        bibtex[value.publicationyear].append(value.citation.citation)
+                    else:
+                        bibtex[value.publicationyear].append(value.citation.citation)
                 else:
-                    bibtex[value.publicationyear].append(value.citation.citation)
+                    nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
+                    print '[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title)
             else:
-                # nobibtex.append('% ' + value.title)
                 nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
                 print '[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title)
         except Exception as ex:
