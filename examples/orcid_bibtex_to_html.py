@@ -15,6 +15,7 @@ import codecs
 
 # setting logging to the DEBUG mode
 import logging
+import traceback
 
 #logging.getLogger("orcid-bibtex-to-html").setLevel(logging.DEBUG)
 logging.getLogger("orcid-bibtex-to-html").setLevel(logging.INFO)
@@ -30,6 +31,18 @@ UMLAUT_TO_LATEX = {
     u'ü' : '\\"{u}',
     u'ß' : '{\\ss}'
 }
+
+
+def log_traceback(ex, ex_traceback=None):
+    print '[i] exception happened, check log file'
+
+    if ex_traceback is None:
+        ex_traceback = ex.__traceback__
+
+    tb_lines = [ line.rstrip('\n') for line in
+                 traceback.format_exception(ex.__class__, ex, ex_traceback)]
+
+    logging.exception(tb_lines)
 
 def generate_bat(orcid_list, bat_name = 'buildall.{0}', separate=False, years = [], encoding='utf-8'):
     """
@@ -142,8 +155,8 @@ def form_bibtex(authors, title, year):
         for x in UMLAUT_TO_LATEX:
             _title = _title.replace(x, UMLAUT_TO_LATEX[x])
     except Exception as ex:
-        print '[i] exception happened'
-        logging.exception('Working with umlauts.')
+        _, _, ex_traceback = sys.exc_info()
+        log_traceback(ex, ex_traceback)
         _title = title
 
     return template.format('{','}', str(uuid.uuid1())[:13], _title, _authors, year)
@@ -181,8 +194,8 @@ def extract_bitex(obj, author):
                 nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
                 print '[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title)
         except Exception as ex:
-            print '[i] exception happened'
-            logging.exception('some exception with BIBTEX, new BIBTEX was generated {0}'.format(value.title))
+            _, _, ex_traceback = sys.exc_info()
+            log_traceback(ex, ex_traceback)
             year = 0
             nobibtex.append(form_bibtex([author], value.title, year))
 
@@ -232,8 +245,8 @@ def main():
             save_bibtex(bibtex=orcid_bibtex, file_prefix=name, separate=separate_by_year)
             orcid_extracted.append(name)
         except Exception as ex:
-            print '[i] exception happened'
-            logging.exception('Caught and error')
+            _, _, ex_traceback = sys.exc_info()
+            log_traceback(ex, ex_traceback)
 
 
     print  years
