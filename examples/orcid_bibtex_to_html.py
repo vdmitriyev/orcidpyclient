@@ -142,6 +142,8 @@ def form_bibtex(authors, title, year):
         for x in UMLAUT_TO_LATEX:
             _title = _title.replace(x, UMLAUT_TO_LATEX[x])
     except Exception as ex:
+        print '[i] exception happened'
+        logging.exception('Working with umlauts.')
         _title = title
 
     return template.format('{','}', str(uuid.uuid1())[:13], _title, _authors, year)
@@ -179,8 +181,8 @@ def extract_bitex(obj, author):
                 nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
                 print '[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title)
         except Exception as ex:
-            print '[e] exception: {0}'.format(str(ex))
-            print '[i] some exception with BIBTEX, new BIBTEX was generated {0}'.format(value.title)
+            print '[i] exception happened'
+            logging.exception('some exception with BIBTEX, new BIBTEX was generated {0}'.format(value.title))
             year = 0
             nobibtex.append(form_bibtex([author], value.title, year))
 
@@ -231,7 +233,8 @@ def main():
             orcid_extracted.append(name)
         except Exception as ex:
             print '[i] exception happened'
-            print '[e] exception: {0}'.format(str(ex))
+            logging.exception('Caught and error')
+
 
     print  years
     generate_bat(orcid_extracted, separate=separate_by_year, years = years)
