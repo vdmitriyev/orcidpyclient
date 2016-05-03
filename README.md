@@ -17,7 +17,6 @@ Manual installation (or usage):
 ### Dependencies
 
 * requests>=1.0.4
-* lucene-querybuilder>=0.1.6
 
 Install dependencies with pip
 ```
