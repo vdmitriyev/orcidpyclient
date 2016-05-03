@@ -64,13 +64,6 @@ If you'd rather search for authors, try ORCID's search functionality ::
     >>> print next(authors).family_name
     wilbanks
 
-You can also accomplish more complex queries using `Q` objects and fields ::
-
-    >>> from orcid import Q
-    >>> authors = orcid.search(Q('given-name','john') & Q('family-name', 'wilbanks'))
-    >>> print next(authors).family_name
-    wilbanks
-
 ### Credits
 
 Cloned from the repository https://github.com/scholrly/orcid-python lead by [Matt Luongo](https://github.com/mhluongo) from [Scholrly](https://github.com/scholrly/)
