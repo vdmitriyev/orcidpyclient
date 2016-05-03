@@ -4,7 +4,7 @@ import requests
 import json
 
 from .constants import ORCID_PUBLIC_BASE_URL
-from .utils import dictmapper, MappingRule as to
+from .utils import dictmapper, u, MappingRule as to
 
 from .exceptions import NotFoundException
 
@@ -64,7 +64,7 @@ ExternalIDBase = dictmapper('ExternalIDBase', {
 
 class ExternalID(ExternalIDBase):
     def __unicode__(self):
-        return unicode(self.id)
+        return u(self.id)
 
     def __repr__(self):
         return '<%s %s:%s>' % (type(self).__name__, self.type, str(self.id))
@@ -139,7 +139,7 @@ def get(orcid_id):
     """
     Get an author based on an ORCID identifier.
     """
-    resp = requests.get(ORCID_PUBLIC_BASE_URL + unicode(orcid_id),
+    resp = requests.get(ORCID_PUBLIC_BASE_URL + u(orcid_id),
                         headers=BASE_HEADERS)
     write_logs(resp)
     json_body = resp.json()
@@ -149,7 +149,7 @@ def get(orcid_id):
 #     """
 #     Get an author based on an ORCID identifier and json
 #     """
-#     resp = requests.get(ORCID_PUBLIC_BASE_URL + unicode(orcid_id),
+#     resp = requests.get(ORCID_PUBLIC_BASE_URL + u(orcid_id),
 #                         headers=BASE_HEADERS)
 #     json_body = resp.json()
 #     write_logs(resp)
@@ -157,7 +157,7 @@ def get(orcid_id):
 
 def search(query):
     resp = requests.get(ORCID_PUBLIC_BASE_URL + 'search/orcid-bio',
-                        params={'q':unicode(query)}, headers=BASE_HEADERS)
+                        params={'q':u(query)}, headers=BASE_HEADERS)
     json_body = resp.json()
     return (Author(res) for res in json_body.get('orcid-search-results', {})\
             .get('orcid-search-result'))
