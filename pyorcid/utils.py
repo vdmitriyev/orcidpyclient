@@ -1,3 +1,5 @@
+import sys
+
 def dict_value_from_path(d, path):
     cur_dict = d
     for key in path[:-1]:
@@ -35,7 +37,7 @@ def dictmapper(typename, mapping):
         return getter
 
     prop_mapping = dict((k, property(getter_from_dict_path(v))) 
-                        for k, v in mapping.iteritems())
+                        for k, v in mapping.items())
     prop_mapping['__init__'] = init
     return type(typename, tuple(), prop_mapping)
 
@@ -46,3 +48,9 @@ class MappingRule(object):
 
     def __call__(self, d):
         return self.further_func(dict_value_from_path(d, self.path))
+
+def u(s):
+    if sys.version_info < (3,):
+        return unicode(s)
+    else:
+        return str(s)

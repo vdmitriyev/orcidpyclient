@@ -1,4 +1,3 @@
-__all__ = ('get', 'search', 'Q')
+__all__ = ('get', 'search')
 
 from .rest import get, search
-from lucenequerybuilder import Q
