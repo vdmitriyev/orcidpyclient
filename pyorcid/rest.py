@@ -11,8 +11,8 @@ from .exceptions import NotFoundException
 # setting logger
 import logging
 logger = logging.getLogger("#orcid#")
-#logging.basicConfig(filename='orcid-log.log', level=logging.INFO)
-logging.basicConfig(filename='orcid-log.log', level=logging.DEBUG)
+logging.basicConfig(filename='orcid-log.log', level=logging.INFO)
+#logging.basicConfig(filename='orcid-log.log', level=logging.DEBUG)
 
 
 BASE_HEADERS = {'Accept':'application/orcid+json'}
