@@ -4,7 +4,7 @@ import requests
 import json
 
 from .constants import ORCID_PUBLIC_BASE_URL
-from .utils import dictmapper, MappingRule as to
+from .utils import dictmapper, u, MappingRule as to
 
 from .exceptions import NotFoundException
 
@@ -64,6 +64,7 @@ AuthorBase = dictmapper('AuthorBase', {
     'keywords'          :to(['person', 'keywords'], _parse_keywords),
     'researcher_urls'   :to(['person', 'researcher-urls','researcher-url'], _parse_researcher_urls),
 })
+
 
 Works = dictmapper('Works', {
     'publications': to(['group'], _parse_publications),
@@ -157,7 +158,7 @@ def get(orcid_id):
 #     """
 #     Get an author based on an ORCID identifier and json
 #     """
-#     resp = requests.get(ORCID_PUBLIC_BASE_URL + unicode(orcid_id),
+#     resp = requests.get(ORCID_PUBLIC_BASE_URL + u(orcid_id),
 #                         headers=BASE_HEADERS)
 #     json_body = resp.json()
 #     write_logs(resp)

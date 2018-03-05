@@ -17,7 +17,6 @@ Manual installation (or usage):
 ### Dependencies
 
 * requests>=1.0.4
-* lucene-querybuilder>=0.1.6
 
 Install dependencies with pip
 ```
@@ -62,13 +61,6 @@ If you'd rather search for authors, try ORCID's search functionality ::
 
     >>> #do a simple author search for john
     >>> authors = orcid.search('john wilbanks')
-    >>> print next(authors).family_name
-    wilbanks
-
-You can also accomplish more complex queries using `Q` objects and fields ::
-
-    >>> from orcid import Q
-    >>> authors = orcid.search(Q('given-name','john') & Q('family-name', 'wilbanks'))
     >>> print next(authors).family_name
     wilbanks
 

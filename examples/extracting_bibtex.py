@@ -28,19 +28,19 @@ def show_keyword(obj):
         Printing author keywords
     """
 
-    print '[i] printing author keywords'
+    print('[i] printing author keywords')
     keywords = obj.keywords
     for key_word in keywords:
-        print key_word
+        print(key_word)
 
 def print_publications(obj):
     """
         Printing author publications
     """
 
-    print '[i] printing author publications'
+    print('[i] printing author publications')
     for value in obj.publications:
-        print value
+        print(value)
 
 def save_bibtex(bibtex, file_name='orcid-bibtex-output.bib', encoding='utf-8'):
     """
@@ -62,7 +62,7 @@ def save_bibtex(bibtex, file_name='orcid-bibtex-output.bib', encoding='utf-8'):
 
     _file.close()
 
-    print '[i] bibtex was created, check following file: %s ' % (file_name)
+    print('[i] bibtex was created, check following file: %s ' % (file_name))
 
 def save_nocite(bibtex, file_name='orcid-nocite-output.tex', encoding='utf-8'):
     """
@@ -89,7 +89,7 @@ def save_nocite(bibtex, file_name='orcid-nocite-output.tex', encoding='utf-8'):
 
     _file.close()
 
-    print '[i] tex with \\nocite was created, check following file: %s ' % (file_name)
+    print('[i] tex with \\nocite was created, check following file: %s ' % (file_name))
 
 def extract_bitex(obj):
     """
@@ -107,7 +107,7 @@ def extract_bitex(obj):
             else:
                 bibtex[value.publicationyear].append(value.citation.citation)
         else:
-            print '[i] this publications is having no BIBTEX %s ' % (value)
+            print('[i] this publications is having no BIBTEX %s ' % (value))
 
     return bibtex
 

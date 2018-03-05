@@ -19,6 +19,5 @@ setup(name='pyorcid',
       packages=['pyorcid'],
       install_requires=[
                       'requests>=1.0.4',
-                      'lucene-querybuilder>=0.1.6',
                   ]
      )

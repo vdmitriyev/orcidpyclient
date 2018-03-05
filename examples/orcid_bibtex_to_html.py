@@ -34,7 +34,7 @@ UMLAUT_TO_LATEX = {
 
 
 def log_traceback(ex, ex_traceback=None):
-    print '[i] exception happened, check log file'
+    print('[i] exception happened, check log file')
 
     if ex_traceback is None:
         ex_traceback = ex.__traceback__
@@ -141,7 +141,7 @@ def save_bibtex(bibtex, file_prefix='orcid-bibtex-output', separate=False, encod
         _file.close()
 
 
-    print '[i] file with bibtex was created, check it here: %s ' % (file_name)
+    print('[i] file with bibtex was created, check it here: %s ' % (file_name))
 
 def form_bibtex(authors, title, year):
     """
@@ -163,7 +163,7 @@ def form_bibtex(authors, title, year):
 
 def dump(obj):
   for attr in dir(obj):
-    print "obj.%s = %s" % (attr, getattr(obj, attr))
+    print("obj.%s = %s" % (attr, getattr(obj, attr)))
 
 def extract_bitex(obj, author):
     """
@@ -189,10 +189,10 @@ def extract_bitex(obj, author):
                         bibtex[value.publicationyear].append(value.citation.citation)
                 else:
                     nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
-                    print '[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title)
+                    print('[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title))
             else:
                 nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
-                print '[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title)
+                print('[i] this publications is having no BIBTEX, new BIBTEX was generated {0}'.format(value.title))
         except Exception as ex:
             _, _, ex_traceback = sys.exc_info()
             log_traceback(ex, ex_traceback)
@@ -228,7 +228,7 @@ def main():
         name = key
         years[name] = list()
         orcidid = orcid_list[key]
-        print '[i] extracting bibtex for {0}'.format(name)
+        print('[i] extracting bibtex for {0}'.format(name))
         orcid_obj = orcid.get(orcidid)
 
         # extracting bibtex
@@ -249,7 +249,7 @@ def main():
             log_traceback(ex, ex_traceback)
 
 
-    print  years
+    print(years)
     generate_bat(orcid_extracted, separate=separate_by_year, years = years)
 
 if __name__ == '__main__':
