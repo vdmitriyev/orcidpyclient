@@ -23,24 +23,19 @@ me = orcid.get('0000-0001-5661-4587')
 
 TARGET_FODLER = 'generated'
 
-def show_keyword(obj):
-    """
-        Printing author keywords
-    """
+def print_keyword(obj):
+    """ Printing author keywords """
 
     print('[i] printing author keywords')
-    keywords = obj.keywords
-    for key_word in keywords:
-        print(key_word)
+    for key_word in obj.keywords:
+        print (key_word)
 
 def print_publications(obj):
-    """
-        Printing author publications
-    """
+    """ Printing author publications """
 
     print('[i] printing author publications')
     for value in obj.publications:
-        print(value)
+        print (value)
 
 def save_bibtex(bibtex, file_name='orcid-bibtex-output.bib', encoding='utf-8'):
     """
@@ -62,7 +57,7 @@ def save_bibtex(bibtex, file_name='orcid-bibtex-output.bib', encoding='utf-8'):
 
     _file.close()
 
-    print('[i] bibtex was created, check following file: %s ' % (file_name))
+    print('[i] bibtex was created, check following file: {0}'.format(file_name))
 
 def save_nocite(bibtex, file_name='orcid-nocite-output.tex', encoding='utf-8'):
     """
@@ -89,7 +84,7 @@ def save_nocite(bibtex, file_name='orcid-nocite-output.tex', encoding='utf-8'):
 
     _file.close()
 
-    print('[i] tex with \\nocite was created, check following file: %s ' % (file_name))
+    print('[i] tex with \\nocite was created, check following file: {0}'.format(file_name))
 
 def extract_bitex(obj):
     """
@@ -100,14 +95,14 @@ def extract_bitex(obj):
 
     bibtex = {}
     for value in obj.publications:
-        if value.citation.citation_type == 'BIBTEX':
+        if value.citation_type == 'BIBTEX':
             if value.publicationyear not in bibtex:
                 bibtex[value.publicationyear] = list()
-                bibtex[value.publicationyear].append(value.citation.citation)
+                bibtex[value.publicationyear].append(value.citation_value)
             else:
-                bibtex[value.publicationyear].append(value.citation.citation)
+                bibtex[value.publicationyear].append(value.citation_value)
         else:
-            print('[i] this publications is having no BIBTEX %s ' % (value))
+            print ('[i] this publications is having no BIBTEX {0}'.format(value))
 
     return bibtex
 
@@ -130,6 +125,6 @@ def orcid_bibtex(obj):
     # citing extracted bibtex
     save_nocite(orcid_bibtex)
 
-#show_keyword(me)
+#print_keyword(me)
 #print_publications(me)
 orcid_bibtex(me)
