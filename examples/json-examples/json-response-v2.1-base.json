@@ -1,0 +1,1637 @@
+{
+    "activities-summary": {
+        "educations": {
+            "education-summary": [
+                {
+                    "created-date": {
+                        "value": 1423063607733
+                    },
+                    "department-name": "Business Information Systems / VLBA",
+                    "end-date": null,
+                    "last-modified-date": {
+                        "value": 1423063634683
+                    },
+                    "organization": {
+                        "address": {
+                            "city": "Oldenburg",
+                            "country": "DE",
+                            "region": "Niedersachsen"
+                        },
+                        "disambiguated-organization": null,
+                        "name": "Carl von Ossietzky University of Oldenburg"
+                    },
+                    "path": "/0000-0001-5661-4587/education/712697",
+                    "put-code": 712697,
+                    "role-title": "PhD Student",
+                    "source": {
+                        "source-client-id": null,
+                        "source-name": {
+                            "value": "Viktor Dmitriyev"
+                        },
+                        "source-orcid": {
+                            "host": "orcid.org",
+                            "path": "0000-0001-5661-4587",
+                            "uri": "http://orcid.org/0000-0001-5661-4587"
+                        }
+                    },
+                    "start-date": {
+                        "day": {
+                            "value": "01"
+                        },
+                        "month": {
+                            "value": "10"
+                        },
+                        "year": {
+                            "value": "2012"
+                        }
+                    },
+                    "visibility": "PUBLIC"
+                }
+            ],
+            "last-modified-date": {
+                "value": 1423063634683
+            },
+            "path": "/0000-0001-5661-4587/educations"
+        },
+        "employments": {
+            "employment-summary": [],
+            "last-modified-date": null,
+            "path": "/0000-0001-5661-4587/employments"
+        },
+        "fundings": {
+            "group": [],
+            "last-modified-date": null,
+            "path": "/0000-0001-5661-4587/fundings"
+        },
+        "last-modified-date": {
+            "value": 1520179696883
+        },
+        "path": "/0000-0001-5661-4587/activities",
+        "peer-reviews": {
+            "group": [],
+            "last-modified-date": null,
+            "path": "/0000-0001-5661-4587/peer-reviews"
+        },
+        "works": {
+            "group": [
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": "SELF",
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.1365/s40702-018-0403-0"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1520179696883
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1520179696883
+                            },
+                            "display-index": "1",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": "SELF",
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.1365/s40702-018-0403-0"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1520179696883
+                            },
+                            "path": "/0000-0001-5661-4587/work/42280897",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2018"
+                                }
+                            },
+                            "put-code": 42280897,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Ermittlung der Digitalisierungspotenziale von nicht-digitalen Gesch\u00e4ftsprozessen"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "JOURNAL_ARTICLE",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": "SELF",
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "http://aisel.aisnet.org/mcis2017/1"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1515362755195
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1515362755192
+                            },
+                            "display-index": "1",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": "SELF",
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "http://aisel.aisnet.org/mcis2017/1"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1515362755195
+                            },
+                            "path": "/0000-0001-5661-4587/work/40276990",
+                            "publication-date": {
+                                "day": {
+                                    "value": "05"
+                                },
+                                "media-type": null,
+                                "month": {
+                                    "value": "09"
+                                },
+                                "year": {
+                                    "value": "2017"
+                                }
+                            },
+                            "put-code": 40276990,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Building A Big Data Analytical Pipeline With Hadoop For Processing Enterprise XML Data"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": "SELF",
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.1002/cae.21777"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1485767352182
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1485767352177
+                            },
+                            "display-index": "1",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": "SELF",
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.1002/cae.21777"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1485767352182
+                            },
+                            "path": "/0000-0001-5661-4587/work/29905998",
+                            "publication-date": {
+                                "day": {
+                                    "value": "18"
+                                },
+                                "media-type": null,
+                                "month": {
+                                    "value": "01"
+                                },
+                                "year": {
+                                    "value": "2017"
+                                }
+                            },
+                            "put-code": 29905998,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Using virtual laboratories in teaching natural sciences: An example of physics courses in university"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "JOURNAL_ARTICLE",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": []
+                    },
+                    "last-modified-date": {
+                        "value": 1482502450341
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1482502450341
+                            },
+                            "display-index": "1",
+                            "external-ids": {
+                                "external-id": []
+                            },
+                            "last-modified-date": {
+                                "value": 1482502450341
+                            },
+                            "path": "/0000-0001-5661-4587/work/29032306",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2016"
+                                }
+                            },
+                            "put-code": 29032306,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Aufbau einer analytischen Pipeline mit Apache Hadoop und XML - Enterprise und Big Data"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "JOURNAL_ARTICLE",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.13140/RG.2.1.3697.3685"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1464694276382
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1464694276191
+                            },
+                            "display-index": "15",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.13140/RG.2.1.3697.3685"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1464694276382
+                            },
+                            "path": "/0000-0001-5661-4587/work/24430215",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2016"
+                                }
+                            },
+                            "put-code": 24430215,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Teaching In-Memory Computing and Big Data Related Skills at University"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "http://dx.doi.org/10.1007/978-3-319-22888-4_34"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066780537
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066780537
+                            },
+                            "display-index": "2",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "http://dx.doi.org/10.1007/978-3-319-22888-4_34"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066780537
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659587",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2015"
+                                }
+                            },
+                            "put-code": 20659587,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "3D Physics Virtual Laboratory as a Teaching Platform"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "BOOK_CHAPTER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.13140/RG.2.1.1565.7689"
+                            },
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "isbn",
+                                "external-id-url": null,
+                                "external-id-value": "978-3-88579-640-4"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066781253
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066781253
+                            },
+                            "display-index": "6",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.13140/RG.2.1.1565.7689"
+                                    },
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "isbn",
+                                        "external-id-url": null,
+                                        "external-id-value": "978-3-88579-640-4"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066781253
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659591",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2015"
+                                }
+                            },
+                            "put-code": 20659591,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Big Data Inspired Water Management Platform for Sensor Data"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.1109/ICECCO.2015.7416878"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1457020293369
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1457020293369
+                            },
+                            "display-index": "14",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.1109/ICECCO.2015.7416878"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1457020293369
+                            },
+                            "path": "/0000-0001-5661-4587/work/22678955",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2015"
+                                }
+                            },
+                            "put-code": 22678955,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Collecting context data generated by mobile devices"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "http://dx.doi.org/10.1016/j.procs.2015.08.530"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066781638
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066781638
+                            },
+                            "display-index": "9",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "http://dx.doi.org/10.1016/j.procs.2015.08.530"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066781638
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659594",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2015"
+                                }
+                            },
+                            "put-code": 20659594,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Exploring a Context-based Network Access Control for Mobile Devices "
+                                },
+                                "translated-title": null
+                            },
+                            "type": "JOURNAL_ARTICLE",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.1109/ICECCO.2015.7416891"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1457020293243
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1457020293243
+                            },
+                            "display-index": "13",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.1109/ICECCO.2015.7416891"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1457020293243
+                            },
+                            "path": "/0000-0001-5661-4587/work/22678954",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2015"
+                                }
+                            },
+                            "put-code": 22678954,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Implementing physics virtual laboratory in 3D: An example of Atwood machine"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": []
+                    },
+                    "last-modified-date": {
+                        "value": 1449067929087
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449067929087
+                            },
+                            "display-index": "12",
+                            "external-ids": {
+                                "external-id": []
+                            },
+                            "last-modified-date": {
+                                "value": 1449067929087
+                            },
+                            "path": "/0000-0001-5661-4587/work/20660354",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2015"
+                                }
+                            },
+                            "put-code": 20660354,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "In-Memory Technology for Smart Wind Farm Control"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "JOURNAL_ARTICLE",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.12821/ijispm030303"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066781070
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066781070
+                            },
+                            "display-index": "5",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.12821/ijispm030303"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066781070
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659590",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2015"
+                                }
+                            },
+                            "put-code": 20659590,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "SOA enabled ELTA: approach in designing business intelligence solutions in Era of Big Data"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "JOURNAL_ARTICLE",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "http://dx.doi.org/10.4108/icst.iccasa.2014.257495"
+                            },
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "isbn",
+                                "external-id-url": null,
+                                "external-id-value": "978-1-63190-005-1"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066781680
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066781680
+                            },
+                            "display-index": "10",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "http://dx.doi.org/10.4108/icst.iccasa.2014.257495"
+                                    },
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "isbn",
+                                        "external-id-url": null,
+                                        "external-id-value": "978-1-63190-005-1"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066781680
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659595",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2014"
+                                }
+                            },
+                            "put-code": 20659595,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "A Context-aware Adaptive Security Framework for Mobile Applications"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.1109/CCST.2014.6987030"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066781285
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066781285
+                            },
+                            "display-index": "7",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.1109/CCST.2014.6987030"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066781285
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659592",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2014"
+                                }
+                            },
+                            "put-code": 20659592,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "A framework along with guidelines for designing secure mobile enterprise applications"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "http://dx.doi.org/10.1016/j.protcy.2014.10.015"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066781453
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066781453
+                            },
+                            "display-index": "8",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "http://dx.doi.org/10.1016/j.protcy.2014.10.015"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066781453
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659593",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2014"
+                                }
+                            },
+                            "put-code": 20659593,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "ELTA: New Approach in Designing Business Intelligence Solutions in Era of Big Data"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "JOURNAL_ARTICLE",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "http://dx.doi.org/10.13140/2.1.2356.8166"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066780870
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066780870
+                            },
+                            "display-index": "4",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "http://dx.doi.org/10.13140/2.1.2356.8166"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066780870
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659589",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2014"
+                                }
+                            },
+                            "put-code": 20659589,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "In-Memory Computing and Big Data Analysis with User-Defined Functions"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.1109/ICAICT.2014.7036005"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066779860
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066779860
+                            },
+                            "display-index": "0",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.1109/ICAICT.2014.7036005"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066779860
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659585",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2014"
+                                }
+                            },
+                            "put-code": 20659585,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Software module \"Virtual Physics Laboratory\" in Higher Education"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "http://dx.doi.org/10.13140/2.1.3313.2320"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066780270
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066780270
+                            },
+                            "display-index": "1",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "http://dx.doi.org/10.13140/2.1.3313.2320"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066780270
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659586",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2014"
+                                }
+                            },
+                            "put-code": 20659586,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "Use Of Information And Communication Technologies (ICT) In Higher Education"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                },
+                {
+                    "external-ids": {
+                        "external-id": [
+                            {
+                                "external-id-relationship": null,
+                                "external-id-type": "doi",
+                                "external-id-url": null,
+                                "external-id-value": "10.1109/SCIS-ISIS.2012.6505237"
+                            }
+                        ]
+                    },
+                    "last-modified-date": {
+                        "value": 1449066781807
+                    },
+                    "work-summary": [
+                        {
+                            "created-date": {
+                                "value": 1449066781807
+                            },
+                            "display-index": "11",
+                            "external-ids": {
+                                "external-id": [
+                                    {
+                                        "external-id-relationship": null,
+                                        "external-id-type": "doi",
+                                        "external-id-url": null,
+                                        "external-id-value": "10.1109/SCIS-ISIS.2012.6505237"
+                                    }
+                                ]
+                            },
+                            "last-modified-date": {
+                                "value": 1449066781807
+                            },
+                            "path": "/0000-0001-5661-4587/work/20659596",
+                            "publication-date": {
+                                "day": null,
+                                "media-type": null,
+                                "month": null,
+                                "year": {
+                                    "value": "2012"
+                                }
+                            },
+                            "put-code": 20659596,
+                            "source": {
+                                "source-client-id": null,
+                                "source-name": {
+                                    "value": "Viktor Dmitriyev"
+                                },
+                                "source-orcid": {
+                                    "host": "orcid.org",
+                                    "path": "0000-0001-5661-4587",
+                                    "uri": "http://orcid.org/0000-0001-5661-4587"
+                                }
+                            },
+                            "title": {
+                                "subtitle": null,
+                                "title": {
+                                    "value": "The web portal \"Active longevity of Kazakhstan population\": Actuality, objectives, functions and preliminary results"
+                                },
+                                "translated-title": null
+                            },
+                            "type": "CONFERENCE_PAPER",
+                            "visibility": "PUBLIC"
+                        }
+                    ]
+                }
+            ],
+            "last-modified-date": {
+                "value": 1520179696883
+            },
+            "path": "/0000-0001-5661-4587/works"
+        }
+    },
+    "history": {
+        "claimed": true,
+        "completion-date": null,
+        "creation-method": "DIRECT",
+        "deactivation-date": null,
+        "last-modified-date": {
+            "value": 1520179696883
+        },
+        "source": null,
+        "submission-date": {
+            "value": 1423062282511
+        },
+        "verified-email": true,
+        "verified-primary-email": true
+    },
+    "orcid-identifier": {
+        "host": "orcid.org",
+        "path": "0000-0001-5661-4587",
+        "uri": "http://orcid.org/0000-0001-5661-4587"
+    },
+    "path": "/0000-0001-5661-4587",
+    "person": {
+        "addresses": {
+            "address": [
+                {
+                    "country": {
+                        "value": "DE"
+                    },
+                    "created-date": {
+                        "value": 1453660687963
+                    },
+                    "display-index": 0,
+                    "last-modified-date": {
+                        "value": 1465226976952
+                    },
+                    "path": "/0000-0001-5661-4587/address/395978",
+                    "put-code": 395978,
+                    "source": {
+                        "source-client-id": null,
+                        "source-name": {
+                            "value": "Viktor Dmitriyev"
+                        },
+                        "source-orcid": {
+                            "host": "orcid.org",
+                            "path": "0000-0001-5661-4587",
+                            "uri": "http://orcid.org/0000-0001-5661-4587"
+                        }
+                    },
+                    "visibility": "PUBLIC"
+                }
+            ],
+            "last-modified-date": {
+                "value": 1465226976952
+            },
+            "path": "/0000-0001-5661-4587/address"
+        },
+        "biography": {
+            "content": null,
+            "created-date": {
+                "value": 1460753646450
+            },
+            "last-modified-date": {
+                "value": 1460753646450
+            },
+            "path": "/0000-0001-5661-4587/biography",
+            "visibility": "PUBLIC"
+        },
+        "emails": {
+            "email": [],
+            "last-modified-date": null,
+            "path": "/0000-0001-5661-4587/email"
+        },
+        "external-identifiers": {
+            "external-identifier": [],
+            "last-modified-date": null,
+            "path": "/0000-0001-5661-4587/external-identifiers"
+        },
+        "keywords": {
+            "keyword": [
+                {
+                    "content": "big data",
+                    "created-date": {
+                        "value": 1423065831834
+                    },
+                    "display-index": 0,
+                    "last-modified-date": {
+                        "value": 1423065831834
+                    },
+                    "path": "/0000-0001-5661-4587/keywords/322098",
+                    "put-code": 322098,
+                    "source": {
+                        "source-client-id": null,
+                        "source-name": {
+                            "value": "Viktor Dmitriyev"
+                        },
+                        "source-orcid": {
+                            "host": "orcid.org",
+                            "path": "0000-0001-5661-4587",
+                            "uri": "http://orcid.org/0000-0001-5661-4587"
+                        }
+                    },
+                    "visibility": "PUBLIC"
+                },
+                {
+                    "content": "machine learning",
+                    "created-date": {
+                        "value": 1423065831838
+                    },
+                    "display-index": 0,
+                    "last-modified-date": {
+                        "value": 1423065831838
+                    },
+                    "path": "/0000-0001-5661-4587/keywords/322099",
+                    "put-code": 322099,
+                    "source": {
+                        "source-client-id": null,
+                        "source-name": {
+                            "value": "Viktor Dmitriyev"
+                        },
+                        "source-orcid": {
+                            "host": "orcid.org",
+                            "path": "0000-0001-5661-4587",
+                            "uri": "http://orcid.org/0000-0001-5661-4587"
+                        }
+                    },
+                    "visibility": "PUBLIC"
+                },
+                {
+                    "content": "data mining",
+                    "created-date": {
+                        "value": 1423065831842
+                    },
+                    "display-index": 0,
+                    "last-modified-date": {
+                        "value": 1423065831842
+                    },
+                    "path": "/0000-0001-5661-4587/keywords/322100",
+                    "put-code": 322100,
+                    "source": {
+                        "source-client-id": null,
+                        "source-name": {
+                            "value": "Viktor Dmitriyev"
+                        },
+                        "source-orcid": {
+                            "host": "orcid.org",
+                            "path": "0000-0001-5661-4587",
+                            "uri": "http://orcid.org/0000-0001-5661-4587"
+                        }
+                    },
+                    "visibility": "PUBLIC"
+                },
+                {
+                    "content": "databases",
+                    "created-date": {
+                        "value": 1423065831848
+                    },
+                    "display-index": 0,
+                    "last-modified-date": {
+                        "value": 1423065831848
+                    },
+                    "path": "/0000-0001-5661-4587/keywords/322101",
+                    "put-code": 322101,
+                    "source": {
+                        "source-client-id": null,
+                        "source-name": {
+                            "value": "Viktor Dmitriyev"
+                        },
+                        "source-orcid": {
+                            "host": "orcid.org",
+                            "path": "0000-0001-5661-4587",
+                            "uri": "http://orcid.org/0000-0001-5661-4587"
+                        }
+                    },
+                    "visibility": "PUBLIC"
+                },
+                {
+                    "content": "data analysis",
+                    "created-date": {
+                        "value": 1423065831855
+                    },
+                    "display-index": 0,
+                    "last-modified-date": {
+                        "value": 1423065831855
+                    },
+                    "path": "/0000-0001-5661-4587/keywords/322102",
+                    "put-code": 322102,
+                    "source": {
+                        "source-client-id": null,
+                        "source-name": {
+                            "value": "Viktor Dmitriyev"
+                        },
+                        "source-orcid": {
+                            "host": "orcid.org",
+                            "path": "0000-0001-5661-4587",
+                            "uri": "http://orcid.org/0000-0001-5661-4587"
+                        }
+                    },
+                    "visibility": "PUBLIC"
+                },
+                {
+                    "content": "user-defined functions",
+                    "created-date": {
+                        "value": 1423065831861
+                    },
+                    "display-index": 0,
+                    "last-modified-date": {
+                        "value": 1423065831861
+                    },
+                    "path": "/0000-0001-5661-4587/keywords/322103",
+                    "put-code": 322103,
+                    "source": {
+                        "source-client-id": null,
+                        "source-name": {
+                            "value": "Viktor Dmitriyev"
+                        },
+                        "source-orcid": {
+                            "host": "orcid.org",
+                            "path": "0000-0001-5661-4587",
+                            "uri": "http://orcid.org/0000-0001-5661-4587"
+                        }
+                    },
+                    "visibility": "PUBLIC"
+                }
+            ],
+            "last-modified-date": {
+                "value": 1423065831861
+            },
+            "path": "/0000-0001-5661-4587/keywords"
+        },
+        "last-modified-date": {
+            "value": 1465226976952
+        },
+        "name": {
+            "created-date": {
+                "value": 1460753646447
+            },
+            "credit-name": null,
+            "family-name": {
+                "value": "Dmitriyev"
+            },
+            "given-names": {
+                "value": "Viktor"
+            },
+            "last-modified-date": {
+                "value": 1460753646447
+            },
+            "path": "0000-0001-5661-4587",
+            "source": null,
+            "visibility": "PUBLIC"
+        },
+        "other-names": {
+            "last-modified-date": null,
+            "other-name": [],
+            "path": "/0000-0001-5661-4587/other-names"
+        },
+        "path": "/0000-0001-5661-4587/person",
+        "researcher-urls": {
+            "last-modified-date": {
+                "value": 1423063710697
+            },
+            "path": "/0000-0001-5661-4587/researcher-urls",
+            "researcher-url": [
+                {
+                    "created-date": {
+                        "value": 1423063710697
+                    },
+                    "display-index": 0,
+                    "last-modified-date": {
+                        "value": 1423063710697
+                    },
+                    "path": "/0000-0001-5661-4587/researcher-urls/410798",
+                    "put-code": 410798,
+                    "source": {
+                        "source-client-id": null,
+                        "source-name": {
+                            "value": "Viktor Dmitriyev"
+                        },
+                        "source-orcid": {
+                            "host": "orcid.org",
+                            "path": "0000-0001-5661-4587",
+                            "uri": "http://orcid.org/0000-0001-5661-4587"
+                        }
+                    },
+                    "url": {
+                        "value": "http://vdmitriyev.github.io/"
+                    },
+                    "url-name": "My GitHub Hosted Personal Page",
+                    "visibility": "PUBLIC"
+                }
+            ]
+        }
+    },
+    "preferences": {
+        "locale": "EN"
+    }
+}

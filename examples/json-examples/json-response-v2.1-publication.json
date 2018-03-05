@@ -1,0 +1,62 @@
+{
+    "citation": {
+        "citation-type": "BIBTEX",
+        "citation-value": "@InProceedings{Muhamedyev:2012:ActiveLongevityKaz, Title= {The web portal \"Active longevity of Kazakhstan population\": Actuality, objectives, functions and preliminary results}, Author= {Muhamedyev, R.I. and Dmitriyev, V.G. and Maratov, M.M. and Ualiyeva, I.M. and Taishmanov, B. and Muhamedyeva, E.L. and Zagulova, D.V. and Mansharipova, A.T.}, Booktitle= {Soft Computing and Intelligent Systems (SCIS) and 13th International Symposium on Advanced Intelligent Systems (ISIS), 2012 Joint 6th International Conference on}, Year= {2012}, Month= {Nov}, Pages= {571-576}, Abstract= {Increasing the duration of active life is one of the most important problems in modern gerontology in the world, including Kazakhstan. First, the solution of these problems is associated with using information and communication technologies (ICT). Gerontological RK portal, which has no analogues in countries of the former USSR, will include information on major aspects of the aging in RK. Portal will be a platform for exchange of experiences, publishing of research results, for getting generalized and personalized information. This paper describes the main elements of the portal and presents preliminary results of frequency occurrence analysis of cardiovascular diseases in elderly age and income level of the respondent on the basis of epidemiological screening, performed on the basis of data collected on our site.}, Doi= {10.1109/SCIS-ISIS.2012.6505237}, Keywords= {age issues;cardiology;diseases;geriatrics;medical information systems;personal information systems;portals;Active longevity of Kazakhstan population;ICT;USSR;Web portal;active life duration;aging aspects;cardiovascular diseases;elderly age;epidemiological screening;frequency occurrence analysis;generalized information;gerontological RK portal;income level;information and communication technologies;information exchange platform;personalized information;research result publishing;Kazakhstan population;cardiovascular diseases;epidemiological screening;gerontology;information technology}}\n\n"
+    },
+    "contributors": {
+        "contributor": []
+    },
+    "country": null,
+    "created-date": {
+        "value": 1449066781807
+    },
+    "external-ids": {
+        "external-id": [
+            {
+                "external-id-relationship": null,
+                "external-id-type": "doi",
+                "external-id-url": null,
+                "external-id-value": "10.1109/SCIS-ISIS.2012.6505237"
+            }
+        ]
+    },
+    "journal-title": {
+        "value": "Soft Computing and Intelligent Systems (SCIS) and 13th International Symposium on Advanced Intelligent Systems (ISIS), 2012 Joint 6th International Conference on"
+    },
+    "language-code": null,
+    "last-modified-date": {
+        "value": 1449066781807
+    },
+    "path": "/0000-0001-5661-4587/work/20659596",
+    "publication-date": {
+        "day": null,
+        "media-type": null,
+        "month": null,
+        "year": {
+            "value": "2012"
+        }
+    },
+    "put-code": 20659596,
+    "short-description": null,
+    "source": {
+        "source-client-id": null,
+        "source-name": {
+            "value": "Viktor Dmitriyev"
+        },
+        "source-orcid": {
+            "host": "orcid.org",
+            "path": "0000-0001-5661-4587",
+            "uri": "https://orcid.org/0000-0001-5661-4587"
+        }
+    },
+    "title": {
+        "subtitle": null,
+        "title": {
+            "value": "The web portal \"Active longevity of Kazakhstan population\": Actuality, objectives, functions and preliminary results"
+        },
+        "translated-title": null
+    },
+    "type": "CONFERENCE_PAPER",
+    "url": null,
+    "visibility": "PUBLIC"
+}
