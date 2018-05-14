@@ -27,9 +27,9 @@ pip install -r requirements.txt
 
 Here's a quick snippet to get info on `John Wilbanks`_. ::
 
-    >>> import orcid
+    >>> import pyorcid
     >>> #retrieve john's profile from his ORCID
-    >>> john = orcid.get('0000-0002-4510-0385')
+    >>> john = pyorcid.get('0000-0002-4510-0385')
     >>> print john.family_name
     wilbanks
 
