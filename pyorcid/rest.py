@@ -2,6 +2,7 @@
 
 import requests
 import json
+import sys
 
 from .constants import ORCID_PUBLIC_BASE_URL
 from .utils import dictmapper, u, MappingRule as to
@@ -10,9 +11,16 @@ from .exceptions import NotFoundException
 
 # setting logger
 import logging
+
+_logger_depth = 'INFO'
+
 logger = logging.getLogger("#orcid#")
-logging.basicConfig(filename='orcid-log.log', level=logging.INFO)
-#logging.basicConfig(filename='orcid-log.log', level=logging.DEBUG)
+logger.setLevel(getattr(logging, _logger_depth))
+ch = logging.StreamHandler(sys.stdout)
+ch.setLevel(getattr(logging, _logger_depth))
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+logger.addHandler(ch)
 
 
 BASE_HEADERS = {'Accept':'application/orcid+json'}
