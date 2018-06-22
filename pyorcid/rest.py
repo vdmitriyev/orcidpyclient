@@ -1,27 +1,28 @@
 # coding: utf-8
 
-import requests
-import json
 import sys
+import json
+import requests
+import logging
 
 from .constants import ORCID_PUBLIC_BASE_URL
 from .utils import dictmapper, u, MappingRule as to
 
 from .exceptions import NotFoundException
 
-# setting logger
-import logging
+#
+# configure logger
+#
 
 _logger_depth = 'INFO'
 
 logger = logging.getLogger("#orcid#")
 logger.setLevel(getattr(logging, _logger_depth))
-ch = logging.StreamHandler(sys.stdout)
-ch.setLevel(getattr(logging, _logger_depth))
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-ch.setFormatter(formatter)
-logger.addHandler(ch)
-
+stdout_sh = logging.StreamHandler(sys.stdout)
+stdout_sh.setLevel(getattr(logging, _logger_depth))
+custom_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+stdout_sh.setFormatter(custom_formatter)
+logger.addHandler(stdout_sh)
 
 BASE_HEADERS = {'Accept':'application/orcid+json'}
 
@@ -67,7 +68,7 @@ AuthorBase = dictmapper('AuthorBase', {
     #'orcid'            :['orcid-profile','orcid-identifier','path'],
     'orcid'             :['orcid-identifier', 'path'],
     'family_name'       :['person', 'name', 'family-name','value'],
-    'given_name'        :['person', 'name', 'given-name','value'],
+    'given_name'        :['person', 'name', 'given-names','value'],
     'biography'         :['person', 'biography', 'content'],
     'keywords'          :to(['person', 'keywords'], _parse_keywords),
     'researcher_urls'   :to(['person', 'researcher-urls','researcher-url'], _parse_researcher_urls),
