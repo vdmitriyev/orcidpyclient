@@ -58,7 +58,7 @@ Maybe you'd like to read about Mr. Wiener's contributions? ::
 
 
 If you'd rather search for authors, try ORCID's search functionality using its
-[API specification](https://members.orcid.org/api/tutorial/search-orcid-registry) ::
+[API specification](https://members.orcid.org/api/tutorial/search-orcid-registry) :
 
     >>> #do a simple author search for john
     >>> authors = orcid.search('family-name:wilbanks+AND+given-names:john')
