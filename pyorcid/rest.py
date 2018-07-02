@@ -5,7 +5,7 @@ import json
 import requests
 import logging
 
-from .constants import ORCID_PUBLIC_BASE_URL
+from .constants import (ORCID_PUBLIC_BASE_URL, ORCID_SANDBOX_BASE_URL)
 from .utils import dictmapper, u, MappingRule as to
 
 from .exceptions import NotFoundException
@@ -24,7 +24,8 @@ custom_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %
 stdout_sh.setFormatter(custom_formatter)
 logger.addHandler(stdout_sh)
 
-BASE_HEADERS = {'Accept':'application/orcid+json'}
+BASE_HEADERS = {'Accept':'application/orcid+json',
+                'Content-Type': 'application/json;charset=UTF-8'}
 
 #
 # HELPERS
@@ -120,8 +121,15 @@ class Author(AuthorBase):
         return self._loaded_works.publications
 
     def __repr__(self):
-        return "<%s %s %s, ORCID %s>" % (type(self).__name__, self.given_name,
-                                         self.family_name, self.orcid)
+        obj_repr = "<{} {} {}, ORCID {}>" 
+        return obj_repr.format(type(self).__name__, 
+                               self.given_name.encode('utf-8') if self.given_name else 'None',
+                               self.family_name.encode('utf-8') if self.family_name else 'None', 
+                               self.orcid)
+
+    def __str__(self):
+        return self.__repr__()
+
 
 class Website(WebsiteBase):
     def __unicode__(self):
@@ -130,6 +138,7 @@ class Website(WebsiteBase):
     def __repr__(self):
         return "<%s %s [%s]>" % (type(self).__name__, self.name, self.url)
 
+
 class Citation(CitationBase):
     def __unicode__(self):
         return self.text
@@ -137,12 +146,14 @@ class Citation(CitationBase):
     def __repr__(self):
         return '<%s [type: %s]>' % (type(self).__name__, self.type)
 
+
 class ExternalID(ExternalIDBase):
     def __unicode__(self):
         return unicode(self.id)
 
     def __repr__(self):
         return '<%s %s:%s>' % (type(self).__name__, self.type, str(self.id))
+
 
 class Publication(PublicationBase):
     def __repr__(self):
@@ -174,7 +185,17 @@ def get(orcid_id):
 #     return Author(json_body), json_body
 
 def search(query):
-    _url = '{0}{1}'.format(ORCID_PUBLIC_BASE_URL, 'search')
-    resp = requests.get(_url, params={'q':unicode(query)}, headers=BASE_HEADERS)
+    """
+    https://members.orcid.org/api/tutorial/search-orcid-registry
+    
+    example_query = {'q':'family-name:Malavolti+AND+given-names:Marco'}
+    
+    """
+    _url = '{0}{1}?q={2}'.format(ORCID_PUBLIC_BASE_URL, 
+                                 'search',
+                                 query)
+    resp = requests.get(_url, headers=BASE_HEADERS)
+    logger.debug(resp.url)
     json_body = resp.json()
-    return (Author(res) for res in json_body.get('orcid-search-results', {}).get('orcid-search-result'))
+    logger.debug(json_body)
+    return (get(res.get('orcid-identifier', {}).get('path')) for res in json_body.get('result', {}))
