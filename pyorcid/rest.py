@@ -195,11 +195,14 @@ def search(query, verbose = False):
     
     """
 
+    if verbose:
+        logger.setLevel(logging.DEBUG)
+        stdout_sh.setLevel(logging.DEBUG)
     _url = '{0}{1}?q={2}'.format(ORCID_PUBLIC_BASE_URL, 
                                  'search',
                                  query)
     resp = requests.get(_url, headers=BASE_HEADERS)
-    if verbose: logger.debug(resp.url)
+    logger.debug(resp.url)
     json_body = resp.json()
-    if verbose: logger.debug(json_body)
+    logger.debug(json_body)
     return (get(res.get('orcid-identifier', {}).get('path')) for res in json_body.get('result', {}))
