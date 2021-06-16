@@ -25,44 +25,43 @@ pip install -r requirements.txt
 
 ### Command Line Examples
 
-Here's a quick snippet to get info on `John Wilbanks`_. ::
+Here's a quick snippet to get info on `John Wilbanks`_. :
 
     >>> import pyorcid
     >>> #retrieve john's profile from his ORCID
-    >>> john = pyorcid.get('0000-0002-4510-0385')
-    >>> print john.family_name
+    >>> orcid_res = pyorcid.get('0000-0002-4510-0385')
+    >>> print (orcid_res.family_name)
     wilbanks
 
-What if you'd like to see an author's works or areas of interest? ::
+What if you'd like to see an author's works or areas of interest? :
 
-    >>> print john.keywords
+    >>> print (orcid_res.keywords)
     []
-    >>> print john.publications
+    >>> print (orcid_res.publications)
     []
 
 Hm, let's try another author. ::
 
-    >>> alfonso = orcid.get('0000-0001-8855-5569')
-    >>> print alfonso.keywords
+    >>> alfonso = pyorcid.get('0000-0001-8855-5569')
+    >>> print (alfonso.keywords)
     [u'computer science', u' bioinformatics', u' computational biology']
-    >>> print alfonso.publications[0]
+    >>> print (alfonso.publications[0])
     <Publication "A note about norbert wiener and his contribution to harmonic analysis and tauberian theorems">
 
 
 Maybe you'd like to read about Mr. Wiener's contributions? ::
 
-    >>> print alfonso.publications[0].url
+    >>> print (alfonso.publications[0].url)
     http://www.scopus.com/inward/record.url?eid=2-s2.0-67650513866&partnerID=MN8TOARS
 
 ### Searching
-
 
 If you'd rather search for authors, try ORCID's search functionality using its
 [API specification](https://members.orcid.org/api/tutorial/search-orcid-registry) :
 
     >>> #do a simple author search for john
-    >>> authors = orcid.search('family-name:wilbanks+AND+given-names:john')
-    >>> print next(authors).family_name
+    >>> authors = pyorcid.search('family-name:wilbanks+AND+given-names:john')
+    >>> print (next(authors).family_name)
     wilbanks
 
 ### Credits

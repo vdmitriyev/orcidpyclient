@@ -3,3 +3,5 @@
 *.log
 *.bib
 *.tex
+*.html
+examples/json-examples/*

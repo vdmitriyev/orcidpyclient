@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name='pyorcid',
-      version='0.2',
+      version='0.3',
       description='A simple wrapper around the ORCID.org API.',
       long_description=readme(),
       classifiers=[

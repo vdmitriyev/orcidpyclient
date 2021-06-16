@@ -4,7 +4,7 @@
 import sys
 sys.path.insert(0, '../')
 
-# maing testing library
+# main testing library
 import pyorcid as orcid
 
 # additional libraries

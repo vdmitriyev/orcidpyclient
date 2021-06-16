@@ -166,6 +166,9 @@ class Publication(PublicationBase):
 def get(orcid_id):
     """ Get an author based on an ORCID identifier. """
 
+    if sys.version_info[0] >= 3:
+        unicode = str
+
     _url = '{0}{1}'.format(ORCID_PUBLIC_BASE_URL, unicode(orcid_id))
     _res = requests.get(_url, headers=BASE_HEADERS)
 
@@ -184,18 +187,19 @@ def get(orcid_id):
 #     write_logs(resp)
 #     return Author(json_body), json_body
 
-def search(query):
+def search(query, verbose = False):
     """
     https://members.orcid.org/api/tutorial/search-orcid-registry
     
     example_query = {'q':'family-name:Malavolti+AND+given-names:Marco'}
     
     """
+
     _url = '{0}{1}?q={2}'.format(ORCID_PUBLIC_BASE_URL, 
                                  'search',
                                  query)
     resp = requests.get(_url, headers=BASE_HEADERS)
-    logger.debug(resp.url)
+    if verbose: logger.debug(resp.url)
     json_body = resp.json()
-    logger.debug(json_body)
+    if verbose: logger.debug(json_body)
     return (get(res.get('orcid-identifier', {}).get('path')) for res in json_body.get('result', {}))
