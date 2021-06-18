@@ -4,7 +4,7 @@
 import sys
 sys.path.insert(0, '../')
 
-# maing testing library
+# main testing library
 import pyorcid as orcid
 
 # additional libraries
@@ -22,17 +22,6 @@ logging.getLogger("orcid-bibtex-to-html").setLevel(logging.INFO)
 
 TARGET_FODLER = 'generated'
 
-UMLAUT_TO_LATEX = {
-    u'Ö' : '\\"{O}',
-    u'ö' : '\\"{o}',
-    u'ä' : '\\"{a}',
-    u'Ä' : '\\"{A}',
-    u'Ü' : '\\"{U}',
-    u'ü' : '\\"{u}',
-    u'ß' : '{\\ss}'
-}
-
-
 def log_traceback(ex, ex_traceback=None):
     print('[i] exception happened, check log file')
 
@@ -48,7 +37,7 @@ def generate_bat(orcid_list, bat_name = 'buildall.{0}', separate=False, years = 
     """
         (list, str, str) -> None
 
-        Generating command bat file
+        Generate BAT file with commands
     """
 
     cmd_comment = 'REM'
@@ -114,7 +103,7 @@ def save_bibtex(bibtex, file_prefix='orcid-bibtex-output', separate=False, encod
     """
         (dict, str, str) -> None
 
-        - saving bibtex to the files, if required separating by year.
+        Saves BibTeX to the files, if required separates them by year.
     """
 
     file_name = '{0}/{1}'.format(TARGET_FODLER, file_prefix)
@@ -143,9 +132,15 @@ def save_bibtex(bibtex, file_prefix='orcid-bibtex-output', separate=False, encod
     print('[i] file with bibtex was created, check it here: {0}'.format(file_name))
 
 def form_bibtex(authors, title, year):
-    """
-        - forming bibtex
-    """
+    """ Forms custom BibTeX entry """
+
+    UMLAUT_TO_LATEX = {
+        u'Ö' : '\\"{O}', u'ö' : '\\"{o}',
+        u'Ä' : '\\"{A}', u'ä' : '\\"{a}',
+        u'Ü' : '\\"{U}', u'ü' : '\\"{u}',
+        u'ß' : '{\\ss}'
+    }
+
 
     template = '@InProceedings{0}{2} , \n\t Title = {0}{3}{1}, \n\t Author = {0}{4}{1}, \n\t Year = {0}{5}{1}\n{1}'
     _authors = ' and '.join(authors)
@@ -160,12 +155,6 @@ def form_bibtex(authors, title, year):
 
     return template.format('{','}', str(uuid.uuid1())[:13], _title, _authors, year)
 
-def dump(obj):
-    """ Makes dump of the object (helper function)"""
-
-    for attr in dir(obj):
-        print('obj.{0} = {1}'.format(attr, getattr(obj, attr)))
-
 def extract_bitex(obj, author):
     """
         (Class) -> dict()
@@ -177,9 +166,6 @@ def extract_bitex(obj, author):
     nobibtex = list()
 
     for value in obj.publications:
-        # from pprint import pprint
-        # pprint(vars(value))
-        # dump(value)
         try:
             if hasattr(value, 'citation_type'):
                 if value.citation_type == 'BIBTEX':

@@ -41,7 +41,7 @@ def save_bibtex(bibtex, file_name='orcid-bibtex-output.bib', encoding='utf-8'):
     """
         (dict, str, str) -> None
 
-        Saving bibtex to the file, grouped by year.
+        Saves BibTeX into the file, grouping them by year.
     """
 
     file_name = '{0}/{1}'.format(TARGET_FODLER, file_name)
@@ -63,7 +63,7 @@ def save_nocite(bibtex, file_name='orcid-nocite-output.tex', encoding='utf-8'):
     """
         (dict, str, str) -> None
 
-        Saving bibtex to the file, grouped by year.
+        Saves BibTeX to the file with "nocite" command, grouped by year.
     """
 
     def extract_bibtex_id(s):
@@ -90,7 +90,7 @@ def extract_bitex(obj):
     """
         (Class) -> dict()
 
-        Method takes as an input object with all publications from ORCID and forms dict with it.
+        Takes an object with all publications from ORCID as the input and forms dict out of it.
     """
 
     bibtex = {}
@@ -110,7 +110,7 @@ def orcid_bibtex(obj):
     """
         (Class) -> None
 
-        Extrating bibtex from ORCID, saving it to the file
+        Extracts BibTeX from ORCID, saves it into the file
     """
 
     if not os.path.exists(TARGET_FODLER):
