@@ -1,4 +1,12 @@
+#extentions
+*.pyc
+*.txt
+*.json
+
+# folders
 *generated/
+
+# files
 vlbalist.py
 orcid-log.log
 output.txt

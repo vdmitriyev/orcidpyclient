@@ -61,6 +61,17 @@ def _parse_publications(l):
 
     return _publications
 
+def _parse_educations(l):
+    _educations = []
+
+    if l is not None:
+        for d in l:
+            name = d['organization']['name']
+            _educations.append(name)
+
+    return _educations
+
+
 #
 # MAPPERS
 #
@@ -73,6 +84,8 @@ AuthorBase = dictmapper('AuthorBase', {
     'biography'         :['person', 'biography', 'content'],
     'keywords'          :to(['person', 'keywords'], _parse_keywords),
     'researcher_urls'   :to(['person', 'researcher-urls','researcher-url'], _parse_researcher_urls),
+    'educations'        :to(['activities-summary', 'educations', 'education-summary'], _parse_educations),
+    'employments'       :to(['activities-summary', 'employments', 'employment-summary'], _parse_educations)
 })
 
 
@@ -119,6 +132,10 @@ class Author(AuthorBase):
         if self._loaded_works is None:
             self._load_works()
         return self._loaded_works.publications
+
+    @property
+    def affiliations(self):
+        return self.educations + self.employments
 
     def __repr__(self):
         obj_repr = "<{} {} {}, ORCID {}>" 
@@ -173,6 +190,7 @@ def get(orcid_id):
     _res = requests.get(_url, headers=BASE_HEADERS)
 
     json_body = _res.json()
+    #print(logger)
     logger.debug('RESPONSE (BASE): {0}'.format(json.dumps(json_body, sort_keys=True, indent=4, separators=(',', ': '))))
 
     return Author(json_body)
