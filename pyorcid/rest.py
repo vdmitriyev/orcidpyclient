@@ -61,15 +61,15 @@ def _parse_publications(l):
 
     return _publications
 
-def _parse_educations(l):
-    _educations = []
+def _parse_affiliations(l):
+    ''' Parses given JSON to get an affiliation (could be education and employment)'''
 
+    _affiliations = []
     if l is not None:
         for d in l:
             name = d['organization']['name']
-            _educations.append(name)
-
-    return _educations
+            _affiliations.append(name)
+    return _affiliations
 
 
 #
@@ -84,8 +84,8 @@ AuthorBase = dictmapper('AuthorBase', {
     'biography'         :['person', 'biography', 'content'],
     'keywords'          :to(['person', 'keywords'], _parse_keywords),
     'researcher_urls'   :to(['person', 'researcher-urls','researcher-url'], _parse_researcher_urls),
-    'educations'        :to(['activities-summary', 'educations', 'education-summary'], _parse_educations),
-    'employments'       :to(['activities-summary', 'employments', 'employment-summary'], _parse_educations)
+    'educations'        :to(['activities-summary', 'educations', 'education-summary'], _parse_affiliations),
+    'employments'       :to(['activities-summary', 'employments', 'employment-summary'], _parse_affiliations)
 })
 
 
