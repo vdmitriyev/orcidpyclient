@@ -1,6 +1,6 @@
 ### About
 
-A simple wrapper around the orcid.org API. Enhanced clone of this rep - https://github.com/scholrly/orcid-python. Ready to run examples can be found in the [examples](examples) folder.
+A simple wrapper around the orcid.org API. Ready to run examples can be found in the [examples](examples) folder.
 
 ### Install
 
@@ -23,9 +23,11 @@ Install dependencies with pip
 pip install -r requirements.txt
 ```
 
-### Command Line Examples
+### Examples
 
-Here's a quick snippet to get info on `John Wilbanks`_. :
+#### Command Line Examples
+
+Here's a quick snippet to get info on the author with the name `John Wilbanks`_. :
 
     >>> import pyorcid
     >>> #retrieve john's profile from his ORCID
@@ -40,21 +42,21 @@ What if you'd like to see an author's works or areas of interest? :
     >>> print (orcid_res.publications)
     []
 
-Hm, let's try another author. ::
+Try another author with a different ORCID:
 
-    >>> alfonso = pyorcid.get('0000-0001-8855-5569')
-    >>> print (alfonso.keywords)
+    >>> author = pyorcid.get('0000-0001-8855-5569')
+    >>> print (author.keywords)
     [u'computer science', u' bioinformatics', u' computational biology']
-    >>> print (alfonso.publications[0])
+    >>> print (author.publications[0])
     <Publication "A note about norbert wiener and his contribution to harmonic analysis and tauberian theorems">
 
+Read about author's contributions:
 
-Maybe you'd like to read about Mr. Wiener's contributions? ::
-
-    >>> print (alfonso.publications[0].url)
+    >>> print (author.publications[0].url)
     http://www.scopus.com/inward/record.url?eid=2-s2.0-67650513866&partnerID=MN8TOARS
 
-### Searching
+
+### Searching Example
 
 If you'd rather search for authors, try ORCID's search functionality using its
 [API specification](https://members.orcid.org/api/tutorial/search-orcid-registry) :
@@ -63,6 +65,10 @@ If you'd rather search for authors, try ORCID's search functionality using its
     >>> authors = pyorcid.search('family-name:wilbanks+AND+given-names:john')
     >>> print (next(authors).family_name)
     wilbanks
+
+#### Ready to Run Examples
+
+* Further examples could be found in the folder [examples](examples).
 
 ### Credits
 

@@ -5,14 +5,14 @@ def readme():
         return f.read()
 
 setup(name='pyorcid',
-      version='0.3',
-      description='A simple wrapper around the ORCID.org API.',
+      version='0.4',
+      description='A simple wrapper around the ORCID.org API',
       long_description=readme(),
       classifiers=[
                   'Development Status :: 4 - Alpha',
                   'License :: OSI Approved :: MIT License',
                   ],
-      url='https://github.com/vdmitriyev/py-orcid',
+      url='https://github.com/vdmitriyev/pyorcid',
       author='Matt Luongo, Viktor Dmitriyev',
       author_email='mhluongo@gmail.com',
       license='MIT',
