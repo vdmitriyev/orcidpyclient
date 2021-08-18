@@ -32,11 +32,7 @@ BASE_HEADERS = {'Accept':'application/orcid+json',
 #
 
 def _parse_keywords(d):
-    # XXX yes, splitting on commas is bad- but a bug in ORCID
-    # (https://github.com/ORCID/ORCID-Parent/issues/27) makes this the  best
-    # way. will fix when they do
     if d is not None:
-        #return d.get('keyword',[{}])[0].get('value','').split(',')
         return [val['content'] for val in d['keyword']]
     return []
 
@@ -190,32 +186,25 @@ def get(orcid_id):
     _res = requests.get(_url, headers=BASE_HEADERS)
 
     json_body = _res.json()
-    #print(logger)
+
     logger.debug('RESPONSE (BASE): {0}'.format(json.dumps(json_body, sort_keys=True, indent=4, separators=(',', ': '))))
 
     return Author(json_body)
 
-# def get_with_json(orcid_id):
-#     """
-#     Get an author based on an ORCID identifier and json
-#     """
-#     resp = requests.get(ORCID_PUBLIC_BASE_URL + u(orcid_id),
-#                         headers=BASE_HEADERS)
-#     json_body = resp.json()
-#     write_logs(resp)
-#     return Author(json_body), json_body
-
 def search(query, verbose = False):
     """
-    https://members.orcid.org/api/tutorial/search-orcid-registry
-    
-    example_query = {'q':'family-name:Malavolti+AND+given-names:Marco'}
-    
+
+    API documentation:
+
+        https://info.orcid.org/documentation/api-tutorials/api-tutorial-searching-the-orcid-registry/
+
+        api_example_query = {'q':'family-name:Malavolti+AND+given-names:Marco'}
     """
 
     if verbose:
         logger.setLevel(logging.DEBUG)
         stdout_sh.setLevel(logging.DEBUG)
+
     _url = '{0}{1}?q={2}'.format(ORCID_PUBLIC_BASE_URL, 
                                  'search',
                                  query)
