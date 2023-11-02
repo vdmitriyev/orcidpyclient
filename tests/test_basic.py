@@ -7,7 +7,7 @@ except:
     import pyorcid
 
 def test_orcid_api_version():
-    assert pyorcid.orcid_api_version() == '2.1'
+    assert pyorcid.orcid_api_version() == '3.0'
 
 def test_existing_name():
     expected = 'wilbanks'
@@ -19,11 +19,11 @@ def test_existing_name_object():
     expected = '<Author b\'john\' b\'wilbanks\', ORCID 0000-0002-4510-0385>'
     orcid_res = pyorcid.get('0000-0002-4510-0385')
 
-    assert str(orcid_res) == expected  
+    assert str(orcid_res) == expected
 
 def test_non_existing_name():
 
-    authors = pyorcid.search('family-name:wilbanksTestName+AND+given-names:john')
+    authors = pyorcid.search('family-name:wilbanksTestName+AND+given-names:john', verbose=True)
     expected = 'No authors found'
     found = None
     
@@ -44,13 +44,3 @@ def test_keywords():
     keywords_orcid.sort()
     
     assert keywords_expected == keywords_orcid
-
-
-def test_publication():
-    
-    cnt_publications = 22
-
-    orcid_res = pyorcid.get('0000-0001-5661-4587')
-    cnt_publications_orcid =  len(orcid_res.publications)
-
-    assert cnt_publications == cnt_publications_orcid

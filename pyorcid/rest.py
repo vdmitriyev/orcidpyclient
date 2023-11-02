@@ -75,8 +75,8 @@ def _parse_affiliations(l):
 AuthorBase = dictmapper('AuthorBase', {
     #'orcid'            :['orcid-profile','orcid-identifier','path'],
     'orcid'             :['orcid-identifier', 'path'],
-    'family_name'       :['person', 'name', 'family-name','value'],
-    'given_name'        :['person', 'name', 'given-names','value'],
+    'family_name'       :['person', 'name', 'family-name', 'value'],
+    'given_name'        :['person', 'name', 'given-names', 'value'],
     'biography'         :['person', 'biography', 'content'],
     'keywords'          :to(['person', 'keywords'], _parse_keywords),
     'researcher_urls'   :to(['person', 'researcher-urls','researcher-url'], _parse_researcher_urls),
@@ -212,8 +212,11 @@ def search(query, verbose = False):
     logger.debug(resp.url)
     json_body = resp.json()
     logger.debug(json_body)
-    return (get(res.get('orcid-identifier', {}).get('path')) for res in json_body.get('result', {}))
-
+    if json_body.get('result') is not None:
+        return (get(res.get('orcid-identifier', {}).get('path')) for res in json_body.get('result', {}))
+    else:
+        return iter(list())
+    
 def orcid_api_version():
     """
     """
