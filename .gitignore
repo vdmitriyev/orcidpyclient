@@ -1,5 +1,9 @@
 # folders
-.venv
+.venv/*
+pyorcid.egg-info/*
+dist/*
+.tox/*
+.vscode/*
 
 # extensions
 *.pyc

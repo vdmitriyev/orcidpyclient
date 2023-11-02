@@ -5,7 +5,7 @@ import json
 import requests
 import logging
 
-from .constants import (ORCID_PUBLIC_BASE_URL, ORCID_SANDBOX_BASE_URL)
+from .constants import ORCID_PUBLIC_BASE_URL, ORCID_SANDBOX_BASE_URL, ORCID_API_VERSION
 from .utils import dictmapper, u, MappingRule as to
 
 from .exceptions import NotFoundException
@@ -213,3 +213,8 @@ def search(query, verbose = False):
     json_body = resp.json()
     logger.debug(json_body)
     return (get(res.get('orcid-identifier', {}).get('path')) for res in json_body.get('result', {}))
+
+def orcid_api_version():
+    """
+    """
+    return ORCID_API_VERSION

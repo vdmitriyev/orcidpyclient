@@ -1,3 +1,3 @@
-__all__ = ('get', 'search')
+__all__ = ('get', 'search', 'orcid_api_version')
 
-from .rest import get, search
+from .rest import get, search, orcid_api_version

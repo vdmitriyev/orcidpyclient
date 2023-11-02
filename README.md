@@ -1,29 +1,26 @@
-### About
+## About
 
 A simple wrapper around the orcid.org API. Ready to run examples can be found in the [examples](examples) folder.
 
-### Install
+## Install
 
-Install at once with pip
+Install using pip
 ```
 pip install git+https://github.com/vdmitriyev/pyorcid.git
 ```
 
-Manual installation (or usage):
+Manual installation:
+
 * Download from the [GitHub](https://github.com/vdmitriyev/pyorcid/archive/master.zip) latest version
 * Unzip archive
-* Install dependencies (see the section *Dependencies*)
+* To create *virtualenv* use -> ```scripts/cmdInitiateEnv.bat```
+* To activate *virtualenv* use -> ```scripts/cmdStartEnv.bat```
 
-### Dependencies
+## Dependencies
 
 * requests>=1.0.4
 
-Install dependencies with pip
-```
-pip install -r requirements.txt
-```
-
-### Examples
+## Examples
 
 #### Command Line Examples
 
@@ -55,7 +52,6 @@ Read about author's contributions:
     >>> print (author.publications[0].url)
     http://www.scopus.com/inward/record.url?eid=2-s2.0-67650513866&partnerID=MN8TOARS
 
-
 ### Searching Example
 
 If you'd rather search for authors, try ORCID's search functionality using its
@@ -68,8 +64,26 @@ If you'd rather search for authors, try ORCID's search functionality using its
 
 #### Ready to Run Examples
 
-* Further examples could be found in the folder [examples](examples).
+* Examples could be found in the folder [examples](examples)
 
-### Credits
+## Development
 
-Cloned from the repository https://github.com/scholrly/orcid-python lead by [Matt Luongo](https://github.com/mhluongo) from [Scholrly](https://github.com/scholrly/)
+* Create virtualenv using ```scripts/cmdInitiateEnv.bat``` and activate it
+* Star VS Code
+```
+code .
+```
+* Run tests -> pytest
+```
+cd tests
+pytest
+```
+* Run tests -> tox
+```
+tox
+tox -e py310
+```
+
+## Credits
+
+* Created based on the cloned repository https://github.com/scholrly/orcid-python lead by [Matt Luongo](https://github.com/mhluongo) from [Scholrly](https://github.com/scholrly/)
