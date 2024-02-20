@@ -6,12 +6,12 @@ A simple wrapper around the orcid.org API. Ready to run examples can be found in
 
 Install using pip
 ```
-pip install git+https://github.com/vdmitriyev/orcid-pyclient.git
+pip install git+https://github.com/vdmitriyev/orcidpyclient.git
 ```
 
 Manual installation:
 
-* Download from the [GitHub](https://github.com/vdmitriyev/orcid-pyclient/archive/master.zip) latest version
+* Download from the [GitHub](https://github.com/vdmitriyev/orcidpyclient/archive/master.zip) latest version
 * Unzip archive
 * To create *virtualenv* use -> ```scripts/cmdInitiateEnv.bat```
 * To activate *virtualenv* use -> ```scripts/cmdStartEnv.bat```
@@ -26,7 +26,7 @@ Manual installation:
 
 Here's a quick snippet to get info on the author with the name `John Wilbanks`_. :
 
-    >>> import pyorcid
+    >>> import orcidpyclient
     >>> #retrieve john's profile from his ORCID
     >>> orcid_res = pyorcid.get('0000-0002-4510-0385')
     >>> print (orcid_res.family_name)
