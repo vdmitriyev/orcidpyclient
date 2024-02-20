@@ -6,12 +6,12 @@ A simple wrapper around the orcid.org API. Ready to run examples can be found in
 
 Install using pip
 ```
-pip install git+https://github.com/vdmitriyev/pyorcid.git
+pip install git+https://github.com/vdmitriyev/orcid-pyclient.git
 ```
 
 Manual installation:
 
-* Download from the [GitHub](https://github.com/vdmitriyev/pyorcid/archive/master.zip) latest version
+* Download from the [GitHub](https://github.com/vdmitriyev/orcid-pyclient/archive/master.zip) latest version
 * Unzip archive
 * To create *virtualenv* use -> ```scripts/cmdInitiateEnv.bat```
 * To activate *virtualenv* use -> ```scripts/cmdStartEnv.bat```
