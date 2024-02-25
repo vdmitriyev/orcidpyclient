@@ -4,6 +4,7 @@
 .vscode/*
 dist/*
 orcidpyclient.egg-info/*
+docs/_build/*
 
 # extensions
 *.pyc
