@@ -1,9 +1,9 @@
 # folders
 .venv/*
-pyorcid.egg-info/*
-dist/*
 .tox/*
 .vscode/*
+dist/*
+orcidpyclient.egg-info/*
 
 # extensions
 *.pyc

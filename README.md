@@ -2,19 +2,27 @@
 
 A simple wrapper around the orcid.org API. Ready to run examples can be found in the [examples](examples) folder.
 
-## Install
+## Installation
 
-Install using pip
+### Using pip
+
+Install latest relased version
+```
+pip install -i https://test.pypi.org/simple/ orcidpyclient
+```
+
+Install latest version from source code
 ```
 pip install git+https://github.com/vdmitriyev/orcidpyclient.git
 ```
 
-Manual installation:
+### Manual
 
 * Download from the [GitHub](https://github.com/vdmitriyev/orcidpyclient/archive/master.zip) latest version
 * Unzip archive
-* To create *virtualenv* use -> ```scripts/cmdInitiateEnv.bat```
-* To activate *virtualenv* use -> ```scripts/cmdStartEnv.bat```
+* Create *virtualenv* (```scripts/cmdInitiateEnv.bat```)
+* Activate *virtualenv* (```scripts/cmdStartEnv.bat```)
+* Run Example
 
 ## Dependencies
 
@@ -83,6 +91,10 @@ pytest
 tox
 tox -e py310
 ```
+
+## License 
+
+MIT 
 
 ## Credits
 
