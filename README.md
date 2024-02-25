@@ -28,7 +28,7 @@ Here's a quick snippet to get info on the author with the name `John Wilbanks`_.
 
     >>> import orcidpyclient
     >>> #retrieve john's profile from his ORCID
-    >>> orcid_res = pyorcid.get('0000-0002-4510-0385')
+    >>> orcid_res = orcidpyclient.get('0000-0002-4510-0385')
     >>> print (orcid_res.family_name)
     wilbanks
 
@@ -41,7 +41,7 @@ What if you'd like to see an author's works or areas of interest? :
 
 Try another author with a different ORCID:
 
-    >>> author = pyorcid.get('0000-0001-8855-5569')
+    >>> author = orcidpyclient.get('0000-0001-8855-5569')
     >>> print (author.keywords)
     [u'computer science', u' bioinformatics', u' computational biology']
     >>> print (author.publications[0])
@@ -58,7 +58,7 @@ If you'd rather search for authors, try ORCID's search functionality using its
 [API specification](https://members.orcid.org/api/tutorial/search-orcid-registry) :
 
     >>> #do a simple author search for john
-    >>> authors = pyorcid.search('family-name:wilbanks+AND+given-names:john')
+    >>> authors = orcidpyclient.search('family-name:wilbanks+AND+given-names:john')
     >>> print (next(authors).family_name)
     wilbanks
 
