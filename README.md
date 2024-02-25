@@ -1,6 +1,6 @@
 ## About
 
-A simple wrapper around the orcid.org API. Ready to run examples can be found in the [examples](examples) folder.
+A simple wrapper around the orcid.org API. Ready to run examples can be found in the ```examples``` folder.
 
 ## Installation
 
@@ -23,10 +23,6 @@ pip install git+https://github.com/vdmitriyev/orcidpyclient.git
 * Create *virtualenv* (```scripts/cmdInitiateEnv.bat```)
 * Activate *virtualenv* (```scripts/cmdStartEnv.bat```)
 * Run Example
-
-## Dependencies
-
-* requests>=1.0.4
 
 ## Examples
 
