@@ -36,11 +36,16 @@ Documentation is available [here](https://vdmitriyev.github.io/orcidpyclient/)
 
 ## Development
 
+### Getting started
+
 * Create virtualenv using ```scripts/cmdInitiateEnv.bat``` and activate it
 * Star VS Code
 ```
 code .
 ```
+
+### Run tests
+
 * Run tests -> pytest
 ```
 cd tests
@@ -50,6 +55,17 @@ pytest
 ```
 tox
 tox -e py310
+```
+
+### Build documentation
+
+* Build manually
+```
+sphinx-build docs docs/_build
+```
+* Build with autobuild
+```
+sphinx-autobuild docs docs/_build/html
 ```
 
 ## License 
