@@ -10,7 +10,7 @@ def get_long_description() -> str:
 
 setup(
     name="orcidpyclient",
-    version="1.1",
+    version="1.2",
     description="A simple wrapper around the ORCID.org API",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",

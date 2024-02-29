@@ -11,6 +11,5 @@ docs/_build/*
 *.txt
 *.log
 *.bib
-*.tex
 *.html
 examples/json-examples/*
