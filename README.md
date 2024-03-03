@@ -32,7 +32,7 @@ Documentation is available [here](https://vdmitriyev.github.io/orcidpyclient/)
 
 #### Ready to Run Examples
 
-* Examples could be found in the folder [examples](examples)
+* Ready to run examples can be found in the folder ```docs -> examples```
 
 ## Development
 
