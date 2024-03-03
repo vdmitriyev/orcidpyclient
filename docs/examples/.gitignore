@@ -1,0 +1,15 @@
+#extentions
+*.pyc
+*.txt
+*.json
+*.log
+
+# folders
+*generated/
+
+# files
+vlbalist.py
+orcid-log.log
+output.txt
+README.html
+orcid-list.json

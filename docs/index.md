@@ -1,10 +1,11 @@
 ### orcidpyclient: wrapper for orcid.org API
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 3
 
 installation
 core
+examples
 ```
 
 ```{toctree}
