@@ -2,30 +2,28 @@ import codecs
 import logging
 import os
 
-import orcidpyclient as orcid
+try:
+    import orcidpyclient
+except:
+
+    import os
+    import sys
+    from pathlib import Path
+
+    current_path = Path(os.path.abspath(os.path.dirname(__file__)))
+    _path_to_add = os.path.join(str(current_path.parent.parent))
+    print(f"[i] Try following path to load package: {_path_to_add})")
+    sys.path.append(_path_to_add)
+
+    import orcidpyclient
+
+    print(f"[i] Use dev version of package with version")
+
 
 logging.getLogger(__name__).setLevel(logging.INFO)
 
-# retrieve a profile from his ORCID
-me = orcid.get("0000-0001-5661-4587")
-
 TARGET_FODLER = "generated"
-
-
-def print_keyword(obj):
-    """Printing author keywords"""
-
-    print("[i] printing author keywords")
-    for key_word in obj.keywords:
-        print(key_word)
-
-
-def print_publications(obj):
-    """Printing author publications"""
-
-    print("[i] printing author publications")
-    for value in obj.publications:
-        print(value)
+ORCID_ID = "0000-0001-5661-4587"
 
 
 def save_bibtex(bibtex, file_name="orcid-bibtex-output.bib", encoding="utf-8"):
@@ -88,19 +86,19 @@ def extract_bibtex(obj):
 
     bibtex = {}
     for value in obj.publications:
-        if value.citation_type == "BIBTEX":
+        if value.citation_type.lower() == "bibtex":
             if value.publicationyear not in bibtex:
                 bibtex[value.publicationyear] = list()
                 bibtex[value.publicationyear].append(value.citation_value)
             else:
                 bibtex[value.publicationyear].append(value.citation_value)
         else:
-            print("[i] this publications is having no BIBTEX {0}".format(value))
+            print("[i] this publications is having NO BibTeX {0}".format(value))
 
     return bibtex
 
 
-def orcid_bibtex(obj):
+def extract_bibtex_orcid(orcid_profile):
     """
     (Class) -> None
 
@@ -111,7 +109,7 @@ def orcid_bibtex(obj):
         os.makedirs(TARGET_FODLER)
 
     # extracting bibtex
-    orcid_bibtex = extract_bibtex(me)
+    orcid_bibtex = extract_bibtex(orcid_profile)
 
     # saving bibtex to file
     save_bibtex(orcid_bibtex)
@@ -120,6 +118,7 @@ def orcid_bibtex(obj):
     save_nocite(orcid_bibtex)
 
 
-# print_keyword(me)
-# print_publications(me)
-orcid_bibtex(me)
+if __name__ == "__main__":
+    # retrieve a profile from his ORCID
+    orcid_profile = orcidpyclient.get(ORCID_ID, debug=False)
+    extract_bibtex_orcid(orcid_profile)

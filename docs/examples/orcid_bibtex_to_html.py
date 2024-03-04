@@ -6,7 +6,23 @@ import sys
 import traceback
 import uuid
 
-import orcidpyclient as orcid
+try:
+    import orcidpyclient
+except:
+
+    import os
+    import sys
+    from pathlib import Path
+
+    current_path = Path(os.path.abspath(os.path.dirname(__file__)))
+    _path_to_add = os.path.join(str(current_path.parent.parent))
+
+    print(f"[i] Try following path to load package: {_path_to_add})")
+    sys.path.append(_path_to_add)
+
+    import orcidpyclient
+
+    print(f"[i] Use dev version of package with version")
 
 logging.getLogger(__name__).setLevel(logging.INFO)
 
@@ -160,7 +176,7 @@ def extract_bitex(obj, author):
     for value in obj.publications:
         try:
             if hasattr(value, "citation_type"):
-                if value.citation_type == "BIBTEX":
+                if value.citation_type.lower() == "bibtex":
                     if value.publicationyear not in bibtex:
                         bibtex[value.publicationyear] = list()
                         bibtex[value.publicationyear].append(value.citation_value)
@@ -184,7 +200,8 @@ def extract_bitex(obj, author):
     return bibtex
 
 
-def load_list(fname: str = "orcid-list.json"):
+def load_list(fname: str):
+
     if not os.path.exists(fname):
         raise Exception("JSON file was not found: {fname}")
 
@@ -200,12 +217,15 @@ def main():
 
     Extrating bibtex from ORCID, saving it to the file
     """
-
+    orcid_file_name_ = "orcid-list.json"
     separate_by_year = False
     try:
-        orcid_list = load_list()
-    except:
-        print("No py file with ORCIDS to work with was found")
+        orcid_list = load_list(fname=orcid_file_name_)
+        print(orcid_list)
+    except Exception as ex:
+        print(f"[e] JSON file with ORCIDs was NOT found: {orcid_file_name_}")
+        _, _, ex_traceback = sys.exc_info()
+        log_traceback(ex, ex_traceback)
         exit(0)
 
     orcid_extracted = list()
@@ -215,13 +235,12 @@ def main():
 
     years = {}
     # extracting bibtex
-    for key in orcid_list:
+    for item in orcid_list:
 
-        name = key
+        name, orcidid = item["name"], item["orcid"]
         years[name] = list()
-        orcidid = orcid_list[key]
         print("[i] extracting bibtex for {0}".format(name))
-        orcid_obj = orcid.get(orcidid)
+        orcid_obj = orcidpyclient.get(orcidid)
 
         # extracting bibtex
         try:
@@ -230,7 +249,8 @@ def main():
             # years
             tmp_list = list()
             for key in orcid_bibtex:
-                tmp_list.append(key)
+                tmp_list.append(int(key))
+
             years[name] = sorted(tmp_list, reverse=True)
 
             # saving bibtex into separated files

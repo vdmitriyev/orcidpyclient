@@ -5,6 +5,7 @@
 dist/*
 orcidpyclient.egg-info/*
 docs/_build/*
+generated/*
 
 # extensions
 *.pyc

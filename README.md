@@ -8,7 +8,7 @@ A simple wrapper around the orcid.org API. Ready to run examples can be found in
 
 Install latest relased version
 ```
-pip install -i https://test.pypi.org/simple/ orcidpyclient
+pip install -i https://test.pypi.org/simple/ orcidpyclient --upgrade
 ```
 
 Install latest version from source code

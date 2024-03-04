@@ -12,10 +12,13 @@
 * Additional information
 	+ iterates through the list or ID's, extracts ORCID, creates bat file to compile bibtex into HTMLs with help of JabRef
 		- List should be in the python dict format, here is the example (I created file 'orcid-list.json')
-		```
+		```json
 		[
-		 { 'John Wilbanks' : '0000-0002-4510-0385'},
-        ]
+			{
+				"name": "John Wilbanks",
+				"orcid": "0000-0002-4510-0385"
+			}
+		]
 		```
     + **NOTE**: To make in run on Mac OS, it's better if you will copy JabRef into the 'generated' folder directly
 

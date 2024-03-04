@@ -36,6 +36,15 @@ for key_word in orcid_res.keywords:
     print (key_word)
 ```
 
+#### Iterate over publications
+
+```python
+import orcidpyclient
+orcid_res = orcidpyclient.get('0000-0002-4510-0385')
+for value in obj.publications:
+    print(value)
+```
+
 #### Trying different author with a different ORCID
 
 ```python
