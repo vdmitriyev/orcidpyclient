@@ -8,6 +8,8 @@ logger.setLevel(getattr(logging, _logger_depth))
 
 stdout_sh = logging.StreamHandler(sys.stdout)
 stdout_sh.setLevel(getattr(logging, _logger_depth))
-stdout_sh.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
+stdout_sh.setFormatter(
+    logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+)
 
 logger.addHandler(stdout_sh)

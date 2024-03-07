@@ -35,12 +35,17 @@ def log_traceback(ex, ex_traceback=None):
     if ex_traceback is None:
         ex_traceback = ex.__traceback__
 
-    tb_lines = [line.rstrip("\n") for line in traceback.format_exception(ex.__class__, ex, ex_traceback)]
+    tb_lines = [
+        line.rstrip("\n")
+        for line in traceback.format_exception(ex.__class__, ex, ex_traceback)
+    ]
 
     logging.exception(tb_lines)
 
 
-def generate_bat(orcid_list, bat_name="buildall.{0}", separate=False, years=[], encoding="utf-8"):
+def generate_bat(
+    orcid_list, bat_name="buildall.{0}", separate=False, years=[], encoding="utf-8"
+):
     """
     (list, str, str) -> None
 
@@ -103,7 +108,9 @@ def generate_bat(orcid_list, bat_name="buildall.{0}", separate=False, years=[], 
     _file.close()
 
 
-def save_bibtex(bibtex, file_prefix="orcid-bibtex-output", separate=False, encoding="utf-8"):
+def save_bibtex(
+    bibtex, file_prefix="orcid-bibtex-output", separate=False, encoding="utf-8"
+):
     """
     (dict, str, str) -> None
 
@@ -183,11 +190,23 @@ def extract_bitex(obj, author):
                     else:
                         bibtex[value.publicationyear].append(value.citation_value)
                 else:
-                    nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
-                    print("[i] this publications is having no BIBTEX, new BIBTEX was generated {0}".format(value.title))
+                    nobibtex.append(
+                        form_bibtex([author], value.title, value.publicationyear)
+                    )
+                    print(
+                        "[i] this publications is having no BIBTEX, new BIBTEX was generated {0}".format(
+                            value.title
+                        )
+                    )
             else:
-                nobibtex.append(form_bibtex([author], value.title, value.publicationyear))
-                print("[i] this publications is having no BIBTEX, new BIBTEX was generated {0}".format(value.title))
+                nobibtex.append(
+                    form_bibtex([author], value.title, value.publicationyear)
+                )
+                print(
+                    "[i] this publications is having no BIBTEX, new BIBTEX was generated {0}".format(
+                        value.title
+                    )
+                )
         except Exception as ex:
             _, _, ex_traceback = sys.exc_info()
             log_traceback(ex, ex_traceback)
@@ -254,7 +273,9 @@ def main():
             years[name] = sorted(tmp_list, reverse=True)
 
             # saving bibtex into separated files
-            save_bibtex(bibtex=orcid_bibtex, file_prefix=name, separate=separate_by_year)
+            save_bibtex(
+                bibtex=orcid_bibtex, file_prefix=name, separate=separate_by_year
+            )
             orcid_extracted.append(name)
         except Exception as ex:
             _, _, ex_traceback = sys.exc_info()

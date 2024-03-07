@@ -39,7 +39,9 @@ def test_existing_name_object():
 
 def test_non_existing_name():
 
-    authors = orcidpyclient.search("family-name:wilbanksTestName+AND+given-names:john", debug=True)
+    authors = orcidpyclient.search(
+        "family-name:wilbanksTestName+AND+given-names:john", debug=True
+    )
     expected = "No authors found"
     found = None
 

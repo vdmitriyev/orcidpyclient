@@ -74,7 +74,9 @@ def save_nocite(bibtex, file_name="orcid-nocite-output.tex", encoding="utf-8"):
 
     _file.close()
 
-    print("[i] tex with \\nocite was created, check following file: {0}".format(file_name))
+    print(
+        "[i] tex with \\nocite was created, check following file: {0}".format(file_name)
+    )
 
 
 def extract_bibtex(obj):

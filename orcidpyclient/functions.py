@@ -34,7 +34,11 @@ def get(orcid_id: str, debug: bool = False):
 
     json_body = _res.json()
 
-    logger.debug("RESPONSE (BASE): {0}".format(json.dumps(json_body, sort_keys=True, indent=4, separators=(",", ": "))))
+    logger.debug(
+        "RESPONSE (BASE): {0}".format(
+            json.dumps(json_body, sort_keys=True, indent=4, separators=(",", ": "))
+        )
+    )
 
     return Author(json_body)
 
@@ -66,7 +70,10 @@ def search(query, debug: bool = False):
     json_body = resp.json()
     logger.debug(json_body)
     if json_body.get("result") is not None:
-        return (get(res.get("orcid-identifier", {}).get("path")) for res in json_body.get("result", {}))
+        return (
+            get(res.get("orcid-identifier", {}).get("path"))
+            for res in json_body.get("result", {})
+        )
     else:
         return iter(list())
 

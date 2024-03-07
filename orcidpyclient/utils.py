@@ -31,7 +31,8 @@ def dictmapper(typename, mapping):
     def getter_from_dict_path(path):
         if not callable(path) and len(path) < 1:
             raise ValueError(
-                "Dict paths should be iterables with at least one" " key or callable objects that take one argument."
+                "Dict paths should be iterables with at least one"
+                " key or callable objects that take one argument."
             )
 
         def getter(self):
@@ -42,7 +43,9 @@ def dictmapper(typename, mapping):
 
         return getter
 
-    prop_mapping = dict((k, property(getter_from_dict_path(v))) for k, v in mapping.items())
+    prop_mapping = dict(
+        (k, property(getter_from_dict_path(v))) for k, v in mapping.items()
+    )
     prop_mapping["__init__"] = init
     return type(typename, tuple(), prop_mapping)
 

@@ -24,12 +24,16 @@ def _parse_publications(l):
         # getting through all works
         for _, d in enumerate(l):
             path = d["work-summary"][0]["path"]
-            _url = "{0}{1}".format(ORCID_PUBLIC_BASE_URL, path[1:])  # remove first symbol '/'
+            _url = "{0}{1}".format(
+                ORCID_PUBLIC_BASE_URL, path[1:]
+            )  # remove first symbol '/'
             _res = requests.get(_url, headers=BASE_HEADERS)
             _json_body = _res.json()
             logger.debug(
                 "REQUEST (PUBLICATIONS): {0}".format(
-                    json.dumps(_json_body, sort_keys=True, indent=4, separators=(",", ": "))
+                    json.dumps(
+                        _json_body, sort_keys=True, indent=4, separators=(",", ": ")
+                    )
                 )
             )
             _publications.append(Publication(_json_body))
@@ -46,9 +50,17 @@ AuthorBase = dictmapper(
         "given_name": ["person", "name", "given-names", "value"],
         "biography": ["person", "biography", "content"],
         "keywords": to(["person", "keywords"], _parse_keywords),
-        "researcher_urls": to(["person", "researcher-urls", "researcher-url"], _parse_researcher_urls),
-        "educations": to(["activities-summary", "educations", "education-summary"], _parse_affiliations),
-        "employments": to(["activities-summary", "employments", "employment-summary"], _parse_affiliations),
+        "researcher_urls": to(
+            ["person", "researcher-urls", "researcher-url"], _parse_researcher_urls
+        ),
+        "educations": to(
+            ["activities-summary", "educations", "education-summary"],
+            _parse_affiliations,
+        ),
+        "employments": to(
+            ["activities-summary", "employments", "employment-summary"],
+            _parse_affiliations,
+        ),
     },
 )
 
@@ -72,10 +84,16 @@ PublicationBase = dictmapper(
 )
 
 ExternalIDBase = dictmapper(
-    "ExternalIDBase", {"id": ["work-external-identifier-id", "value"], "type": ["work-external-identifier-type"]}
+    "ExternalIDBase",
+    {
+        "id": ["work-external-identifier-id", "value"],
+        "type": ["work-external-identifier-type"],
+    },
 )
 
-CitationBase = dictmapper("CitationBase", {"type": ["citation-type"], "value": ["citation-value"]})
+CitationBase = dictmapper(
+    "CitationBase", {"type": ["citation-type"], "value": ["citation-value"]}
+)
 
 WebsiteBase = dictmapper("WebsiteBase", {"name": ["url-name"], "url": ["url", "value"]})
 
@@ -88,7 +106,9 @@ class Author(AuthorBase):
         _res = requests.get(_url, headers=BASE_HEADERS)
         _json_body = _res.json()
         logger.debug(
-            "RESPONSE (WORKS): {0}".format(json.dumps(_json_body, sort_keys=True, indent=4, separators=(",", ": ")))
+            "RESPONSE (WORKS): {0}".format(
+                json.dumps(_json_body, sort_keys=True, indent=4, separators=(",", ": "))
+            )
         )
         self._loaded_works = Works(_json_body)
 

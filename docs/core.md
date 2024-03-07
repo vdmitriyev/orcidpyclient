@@ -4,7 +4,7 @@ How to install the package: [installation](installation.md)
 
 ### Basics Usage
 
-#### A quick snippet to get info on the author 
+#### A quick snippet to get info on the author
 
 The name of the author ```John Wilbanks```
 
@@ -114,7 +114,7 @@ import orcidpyclient
 
 def get_affiliation(orcid:str):
     """Gets affiliation of the"""
-    
+
     author = pyorcid.get(orcid)
     print(f'Educations   : {author.educations}')
     print(f'Employments  : {author.employments}')

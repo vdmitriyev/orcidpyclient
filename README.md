@@ -68,9 +68,9 @@ sphinx-build docs docs/_build
 sphinx-autobuild docs docs/_build/html
 ```
 
-## License 
+## License
 
-MIT 
+MIT
 
 ## Credits
 
