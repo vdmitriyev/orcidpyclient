@@ -10,7 +10,7 @@ def get_long_description() -> str:
 
 setup(
     name="orcidpyclient",
-    version="1.5",
+    version="1.6",
     description="A simple wrapper around the ORCID.org API",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
@@ -20,7 +20,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     url="https://github.com/vdmitriyev/orcidpyclient",
-    author="vdmitriyev, Matt Luongo",
+    author="vdmitriyev",
     license="MIT",
     packages=["orcidpyclient"],
     install_requires=[
