@@ -30,6 +30,10 @@ jobs:
         name: python-package-distributions
         path: dist/
 
+  # Call the documentation workflow directly
+  documentation:
+    uses: ./.github/workflows/documentation.yml
+
   publish-to-testpypi:
     name: Publish Python 🐍 package distribution 📦 to TestPyPI
     if: startsWith(github.ref, 'refs/tags/')  # only publish on tag pushes

@@ -1,6 +1,6 @@
-name: documentation
+name: Build documentation 📖
 
-on: [push, pull_request, workflow_dispatch]
+on: [push, pull_request, workflow_dispatch, workflow_call]
 
 permissions:
   contents: write
