@@ -7,9 +7,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "orcidpyclient"
-copyright = "2024, vdmitriyev"
+copyright = "2024 - 2026, vdmitriyev"
 author = "vdmitriyev"
-release = "1.2"
+release = "2.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

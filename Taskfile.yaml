@@ -1,0 +1,17 @@
+version: '3'
+
+includes:
+
+  py: ./taskfiles/Taskfile_python.yml
+  git: ./taskfiles/Taskfile_git.yml
+  pre-commit: ./taskfiles/Taskfile_pre_commit.yml
+
+tasks:
+
+  default:
+    desc: lists all tasks
+    silent: true
+    cmds:
+      - task --list-all
+      - echo ""
+      - echo "Example usage-> 'task check-virtualenv'"

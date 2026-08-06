@@ -6,9 +6,9 @@ A simple wrapper around the orcid.org API. Ready to run examples can be found in
 
 ### Using pip
 
-Install latest relased version
+Install latest related version
 ```
-pip install -i https://test.pypi.org/simple/ orcidpyclient --upgrade
+pip install --upgrade orcidpyclient
 ```
 
 Install latest version from source code
@@ -18,7 +18,7 @@ pip install git+https://github.com/vdmitriyev/orcidpyclient.git
 
 ### Manual
 
-* Download from the [GitHub](https://github.com/vdmitriyev/orcidpyclient/archive/master.zip) latest version
+* Download from the [GitHub](https://github.com/vdmitriyev/orcidpyclient/archive/refs/heads/main.zip) latest version as archive
 * Unzip archive
 * Create *virtualenv* (```scripts/cmdInitiateEnv.bat```)
 * Activate *virtualenv* (```scripts/cmdStartEnv.bat```)

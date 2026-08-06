@@ -1,4 +1,4 @@
-name: Publish Python 🐍 distribution 📦 to TestPyPI and PyPI
+name: Publish Python 🐍 package distribution 📦 to PyPI
 
 on: push
 
@@ -28,10 +28,10 @@ jobs:
         path: dist/
 
   publish-to-testpypi:
-    name: Publish Python 🐍 distribution 📦 to TestPyPI
-    if: startsWith(github.ref, 'refs/tags/')  # only publish to PyPI on tag pushes
+    name: Publish Python 🐍 package distribution 📦 to TestPyPI
+    if: startsWith(github.ref, 'refs/tags/')  # only publish on tag pushes
     needs:
-    - build
+      - build
     runs-on: ubuntu-latest
 
     environment:
@@ -39,7 +39,7 @@ jobs:
       url: https://test.pypi.org/p/orcidpyclient
 
     permissions:
-      id-token: write  # IMPORTANT: mandatory for trusted publishing
+      id-token: write  # mandatory for trusted publishing
 
     steps:
     - name: Download all the dists
@@ -52,18 +52,20 @@ jobs:
       with:
         repository-url: https://test.pypi.org/legacy/
 
-  github-release:
-    name: >-
-      Upload Python 🐍 distribution to GitHub Release
-    if: startsWith(github.ref, 'refs/tags/')  # only runs, when tas was pushed
+  publish-to-pypi:
+    name: Publish Python 🐍 distribution 📦 to PyPI
+    if: startsWith(github.ref, 'refs/tags/')
     needs:
       - build
-      - publish-to-testpypi
+      - publish-to-testpypi  # Runs ONLY if testpypi publish succeeds
     runs-on: ubuntu-latest
 
+    environment:
+      name: pypi
+      url: https://pypi.org/p/orcidpyclient
+
     permissions:
-      contents: write  # IMPORTANT: mandatory for making GitHub Releases
-      id-token: write  # IMPORTANT: mandatory for sigstore
+      id-token: write  # mandatory for trusted publishing
 
     steps:
     - name: Download all the dists
@@ -71,12 +73,28 @@ jobs:
       with:
         name: python-package-distributions
         path: dist/
-    # - name: Sign the dists with Sigstore
-    #   uses: sigstore/gh-action-sigstore-python@v2.1.1
-    #   with:
-    #     inputs: >-
-    #       ./dist/*.tar.gz
-    #       ./dist/*.whl
+    - name: Publish distribution 📦 to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+
+  github-release:
+    name: >-
+      Upload Python 🐍 package distribution to GitHub Release
+    if: startsWith(github.ref, 'refs/tags/')
+    needs:
+      - build
+      - publish-to-pypi  # Waits until PyPI publication completes successfully
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      id-token: write
+
+    steps:
+    - name: Download all the dists
+      uses: actions/download-artifact@v4.1.7
+      with:
+        name: python-package-distributions
+        path: dist/
     - name: Create GitHub Release
       env:
         GITHUB_TOKEN: ${{ github.token }}
@@ -88,8 +106,6 @@ jobs:
     - name: Upload artifact to GitHub Release
       env:
         GITHUB_TOKEN: ${{ github.token }}
-      # Upload to GitHub Release using the `gh` CLI.
-      # `dist/` contains the built packages
       run: >-
         gh release upload
         '${{ github.ref_name }}' dist/**
