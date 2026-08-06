@@ -5,7 +5,14 @@ on:
     tags:
       - '*'
 
+
 jobs:
+
+  # 1. Run documentation workflow first
+  docs:
+    uses: ./.github/workflows/documentation.yml
+    permissions:
+      contents: write
 
   build:
     name: Build distribution 📦
@@ -29,10 +36,6 @@ jobs:
       with:
         name: python-package-distributions
         path: dist/
-
-  # Call the documentation workflow directly
-  documentation:
-    uses: ./.github/workflows/documentation.yml
 
   publish-to-testpypi:
     name: Publish Python 🐍 package distribution 📦 to TestPyPI
