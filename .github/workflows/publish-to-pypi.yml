@@ -1,6 +1,9 @@
 name: Publish Python 🐍 package distribution 📦 to PyPI
 
-on: push
+on:
+  push:
+    tags:
+      - '*'
 
 jobs:
 
