@@ -11,6 +11,7 @@ jobs:
 
   # 1. Run documentation workflow first
   docs:
+    name: Build documentation 📖
     uses: ./.github/workflows/documentation.yml
     permissions:
       contents: write
